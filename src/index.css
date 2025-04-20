@@ -1,0 +1,10 @@
+@import "tailwindcss"; 
+
+@media (max-width: 768px) {
+    .slide-container div {
+      height: 250px !important;
+      font-size: 1.2rem !important;
+    }
+  }
+  
+
