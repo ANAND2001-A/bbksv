@@ -66,7 +66,7 @@ export default function Navbar() {
           </div>
 
           <Link to="/teacher">Teacher</Link>
-          <Link to="/navgallary">Gallary</Link>
+          <Link to="/gallary">Gallary</Link>
           <Link to="/admin">Dashboard</Link>
 
           {/* Pages Dropdown */}

@@ -126,14 +126,14 @@ const About = () => {
       role: "Alumni",
       quote: "BaBa B.K. provided me with the foundation I needed to succeed.",
       imageUrl:
-        { img1 },
+        img1 ,
     },
     {
       name: "Jane Smith",
       role: "Current Student",
       quote: "The faculty here is amazing, and the environment is inspiring.",
       imageUrl:
-        { img1 },
+      img1,
     },
     // Add more testimonials as needed
   ];
@@ -160,7 +160,7 @@ const About = () => {
       description:
         "BaBa B.K Higher Secondary School was established with a vision to provide quality education.",
       imageUrl:
-        { img1 },
+      img1,
     },
     {
       year: "2005",
@@ -168,7 +168,7 @@ const About = () => {
       description:
         "Major expansion of facilities including new science labs and library resources.",
       imageUrl:
-        { img1 },
+      img1,
     },
   ];
 
@@ -199,7 +199,7 @@ const About = () => {
       description:
         "Spacious, well-lit classrooms equipped with smart boards and comfortable seating.",
       imageUrl:
-        { img1 },
+      img1,
     },
   ];
 
@@ -209,7 +209,7 @@ const About = () => {
       <section
         className="relative h-[600px] bg-cover bg-center"
         style={{
-          backgroundImage: { img1 },
+          backgroundImage: img1,
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>

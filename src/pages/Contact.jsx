@@ -57,7 +57,7 @@ const Contact = () => {
     <div className="bg-white">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="bg-gray-50 rounded-4xl shadow-sm p-8">
+          <div className="bg-blue-50 rounded-4xl shadow-sm p-8">
             <h2 className="text-2xl font-semibold mb-8">Get in Touch</h2>
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
@@ -166,7 +166,7 @@ const Contact = () => {
           </div>
 
           <div className="space-y-8">
-            <div className="bg-[#f5f8fb] rounded-4xl shadow-sm p-8">
+            <div className="bg-blue-50 rounded-4xl shadow-sm p-8">
               <h3 className="text-xl font-semibold mb-6 ml-10">
                 Contact Information
               </h3>
@@ -233,7 +233,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-[#f5f8fb] rounded-4xl shadow-sm p-8">
+            <div className="bg-blue-50 rounded-4xl shadow-sm p-8">
               <h3 className="text-xl font-semibold mb-6">Our Location</h3>
               <div className="rounded-lg overflow-hidden">
                 <iframe
