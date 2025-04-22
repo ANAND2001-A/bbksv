@@ -1,5 +1,4 @@
-@import "tailwindcss"; 
-
+@import "tailwindcss";
 @media (max-width: 768px) {
     .slide-container div {
       height: 250px !important;

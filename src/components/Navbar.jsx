@@ -3,6 +3,8 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { IoChevronDown } from 'react-icons/io5';
 import { Link } from "react-router-dom";
 import logo from "../assets/logos/bbksv.png";
+import React from 'react';
+import CustomButton from './CustomButton';
 
 export default function Navbar() {
   const [showLandings, setShowLandings] = useState(false);
@@ -38,7 +40,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <img className="w-10 h-10 object-cover rounded-full" src={logo} alt="logo.jpg" />
-          <span className="text-2xl font-bold text-[#005B96]">BaBa B.K</span>
+          <span className="text-2xl font-bold text-[#005B96]">बाबा बी.के. स्मारक विद्यालय</span>
         </div>
 
         {/* Menu */}
@@ -64,7 +66,7 @@ export default function Navbar() {
           </div>
 
           <Link to="/teacher">Teacher</Link>
-          <Link to="/navgallary">Gallary</Link>
+          <Link to="/gallary">Gallary</Link>
           <Link to="/admin">Dashboard</Link>
 
           {/* Pages Dropdown */}
@@ -88,13 +90,20 @@ export default function Navbar() {
 
         {/* Right Buttons */}
         <div className="flex items-center gap-3">
-          <button className="border border-[#005B96] rounded-full p-2">
-            <FaWhatsapp className="text-[#005B96]" />
-          </button>
-          <Link to="/contact">
-            <button className="bg-[#005B96] text-white rounded-full px-5 py-2 font-semibold">
-              Contact
+          <a
+            href="https://wa.me/918948557071?text=Hi%20there%2C%20I%20want%20to%20know%20more!"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="border border-[#005B96] rounded-full p-2">
+              <FaWhatsapp className="text-[#005B96]" />
             </button>
+          </a>
+
+          <Link to="/contact">
+            <CustomButton type="submit" >
+              Contact
+            </CustomButton>   
           </Link>
         </div>
       </div>
