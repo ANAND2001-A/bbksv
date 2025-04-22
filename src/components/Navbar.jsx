@@ -141,7 +141,7 @@ export default function Navbar({ children }) {
         </a>
       </nav>
 
-      {/* 👇 Page content wrapper with padding */}
+      {/* 👇 Page content wrapper with padding ajbhjhbdgbh ef*/}
       <div className="pt-[70px] lg:pt-0">
         {children}
       </div>
