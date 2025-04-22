@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowUp } from "lucide-react";
 import React from "react";
-import CustomButton from "./CustomButton"; // Import CustomButton
+import CustomButton from "./CustomButton";
 
 export default function FloatingActionButton() {
   const [isVisible, setIsVisible] = useState(false);
@@ -20,11 +20,11 @@ export default function FloatingActionButton() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-6 right-6 z-50 hidden md:block">
       {isVisible && (
         <CustomButton
           onClick={scrollToTop}
-          bgColor="#005B96" // Set the color you want for the floating button
+          bgColor="#005B96"
           className="p-4 rounded-full shadow-lg transition-all duration-300 ease-in-out animate-bounce"
         >
           <ArrowUp size={24} />

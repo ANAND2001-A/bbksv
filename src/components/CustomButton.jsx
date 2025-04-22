@@ -1,6 +1,12 @@
 import React from 'react';
 
-const CustomButton = ({ type = "button", onClick, children, className = "", bgColor = "#005B96" }) => {
+const CustomButton = ({
+  type = "button",
+  onClick,
+  children,
+  className = "",
+  bgColor,
+}) => {
   return (
     <button
       type={type}
