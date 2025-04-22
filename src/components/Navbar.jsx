@@ -130,7 +130,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Bottom Nav */}
+      {/* Mobile Bottom Nav ghjuytrghjtrtyjn*/}
       <nav className="bg-black/30 w-max px-6 py-3 fixed left-1/2 bottom-4 -translate-x-1/2 z-40 flex gap-3 rounded-full backdrop-blur-md lg:hidden">
         <a href="/" onClick={() => setActiveNav('/')} className={linkClass('#home')}>
           <AiOutlineHome />
