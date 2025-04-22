@@ -44,7 +44,7 @@ export default function Navbar() {
         </div>
 
         {/* Menu */}
-        <div className="bg-[#f5f8fb] text-[#005B96] rounded-full px-6 py-2 flex items-center gap-6 shadow-sm relative">
+        <div className="bg-blue-50 text-[#005B96] rounded-full px-6 py-2 flex items-center gap-6 shadow-sm relative">
           <Link to="/" className="font-medium">Home</Link>
 
           {/* Courses Dropdown */}
