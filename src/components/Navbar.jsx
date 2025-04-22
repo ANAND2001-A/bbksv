@@ -7,6 +7,8 @@ import CustomButton from './CustomButton';
 import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai';
 import { BiBook, BiMessageSquareDetail } from 'react-icons/bi';
 import { RiServiceLine } from 'react-icons/ri';
+import { GiTeacher } from "react-icons/gi";  // Ensure this is added
+
 
 export default function Navbar() {
   const [showLandings, setShowLandings] = useState(false);
@@ -56,8 +58,7 @@ export default function Navbar() {
           </div>
 
           {/* Menu */}
-          <div className="text-[#005B96] flex items-center gap-6">
-            <Link to="/" className="font-medium">Home</Link>
+          <div className="bg-blue-50 text-[#005B96] rounded-full px-6 py-2 flex items-center gap-6 shadow-sm relative">            <Link to="/" className="font-medium">Home</Link>
 
             {/* Courses Dropdown */}
             <div className="relative" ref={landingsRef}>
@@ -131,20 +132,20 @@ export default function Navbar() {
 
       {/* Mobile Bottom Nav */}
       <nav className="bg-black/30 w-max px-6 py-3 fixed left-1/2 bottom-4 -translate-x-1/2 z-40 flex gap-3 rounded-full backdrop-blur-md lg:hidden">
-        <a href="#home" onClick={() => setActiveNav('/')} className={linkClass('#home')}>
+        <a href="/" onClick={() => setActiveNav('/')} className={linkClass('#home')}>
           <AiOutlineHome />
         </a>
         <a href="#about" onClick={() => setActiveNav('/teacher')} className={linkClass('#about')}>
           <AiOutlineUser />
         </a>
-        <a href="#experience" onClick={() => setActiveNav('#experience')} className={linkClass('#experience')}>
+        <a href="/gallary" onClick={() => setActiveNav('/gallary')} className={linkClass('#experience')}>
           <BiBook />
         </a>
-        <a href="#portfolio" onClick={() => setActiveNav('#portfolio')} className={linkClass('#portfolio')}>
+        <a href="/gallary" onClick={() => setActiveNav('/gallary')} className={linkClass('#portfolio')}>
           <RiServiceLine />
         </a>
-        <a href="#contact" onClick={() => setActiveNav('#contact')} className={linkClass('#contact')}>
-          <BiMessageSquareDetail />
+        <a href="/teacher" onClick={() => setActiveNav('/teacher')} className={linkClass('#contact')}>
+       <GiTeacher />
         </a>
       </nav>
     </>
