@@ -7,13 +7,11 @@ import CustomButton from './CustomButton';
 import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai';
 import { BiBook, BiMessageSquareDetail } from 'react-icons/bi';
 import { RiServiceLine } from 'react-icons/ri';
-import { GiTeacher } from "react-icons/gi";  // Ensure this is added
+import { GiTeacher } from "react-icons/gi";
 
-
-export default function Navbar() {
+export default function Navbar({ children }) {
   const [showLandings, setShowLandings] = useState(false);
   const [showPages, setShowPages] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const [activeNav, setActiveNav] = useState('#home');
 
   const landingsRef = useRef(null);
@@ -21,15 +19,10 @@ export default function Navbar() {
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (
-        landingsRef.current && !landingsRef.current.contains(event.target)
-      ) {
+      if (landingsRef.current && !landingsRef.current.contains(event.target)) {
         setShowLandings(false);
       }
-
-      if (
-        pagesRef.current && !pagesRef.current.contains(event.target)
-      ) {
+      if (pagesRef.current && !pagesRef.current.contains(event.target)) {
         setShowPages(false);
       }
     }
@@ -58,7 +51,8 @@ export default function Navbar() {
           </div>
 
           {/* Menu */}
-          <div className="bg-blue-50 text-[#005B96] rounded-full px-6 py-2 flex items-center gap-6 shadow-sm relative">            <Link to="/" className="font-medium">Home</Link>
+          <div className="bg-blue-50 text-[#005B96] rounded-full px-6 py-2 flex items-center gap-6 shadow-sm relative">
+            <Link to="/" className="font-medium">Home</Link>
 
             {/* Courses Dropjdnjdown */}
             <div className="relative" ref={landingsRef}>
@@ -123,9 +117,7 @@ export default function Navbar() {
             </button>
           </a>
           <Link to="/contact">
-            <CustomButton type="submit" small>
-              Contact
-            </CustomButton>
+            <CustomButton type="submit">Contact</CustomButton>
           </Link>
         </div>
       </div>
@@ -145,9 +137,14 @@ export default function Navbar() {
           <RiServiceLine />
         </a>
         <a href="/teacher" onClick={() => setActiveNav('/teacher')} className={linkClass('#contact')}>
-       <GiTeacher />
+          <GiTeacher />
         </a>
       </nav>
+
+      {/* 👇 Page content wrapper with padding */}
+      <div className="pt-[70px] lg:pt-0">
+        {children}
+      </div>
     </>
   );
 }
