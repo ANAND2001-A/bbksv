@@ -14,7 +14,7 @@ import CustomButton from "../components/CustomButton";
 const GallarySection = () => {
   const [activeCategory, setActiveCategory] = useState("All Photos");
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(4); // Only show 4 items at a time
+  const [itemsPerPage] = useState(4);
   const [viewMode, setViewMode] = useState("grid");
   const [sortOption, setSortOption] = useState("Latest");
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -153,11 +153,10 @@ const GallarySection = () => {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition ${
-                activeCategory === category
-                  ? "bg-blue-900 text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
+              className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition ${activeCategory === category
+                ? "bg-blue-900 text-white"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                }`}
             >
               <ImageIcon size={16} />
               {category}
@@ -178,17 +177,15 @@ const GallarySection = () => {
 
           <button
             onClick={() => setViewMode("grid")}
-            className={`p-2 rounded ${
-              viewMode === "grid" ? "bg-blue-900 text-white" : "bg-white"
-            }`}
+            className={`p-2 rounded ${viewMode === "grid" ? "bg-blue-900 text-white" : "bg-white"
+              }`}
           >
             <Grid size={20} />
           </button>
           <button
             onClick={() => setViewMode("list")}
-            className={`p-2 rounded ${
-              viewMode === "list" ? "bg-blue-900 text-white" : "bg-white"
-            }`}
+            className={`p-2 rounded ${viewMode === "list" ? "bg-blue-900 text-white" : "bg-white"
+              }`}
           >
             <List size={20} />
           </button>

@@ -40,7 +40,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <img className="w-10 h-10 object-cover rounded-full" src={logo} alt="logo.jpg" />
-          <span className="text-2xl font-bold text-[#005B96]">BaBa B.K</span>
+          <span className="text-2xl font-bold text-[#005B96]">बाबा बी.के. स्मारक विद्यालय</span>
         </div>
 
         {/* Menu */}

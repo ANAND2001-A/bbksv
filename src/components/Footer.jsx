@@ -1,5 +1,4 @@
-import { FaFacebookF, FaYoutube, FaInstagram  } from 'react-icons/fa';
-import {  SiWhatsapp  } from 'react-icons/si';
+import { FaFacebookF, FaYoutube, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import logo from "../assets/logos/bbksv.png";
 import React from 'react';
 
@@ -10,12 +9,12 @@ export default function Footer() {
         {/* Column 1 */}
         <div>
           <div className="flex items-center gap-2">
-                    <img className="w-10 h-10 object-cover rounded-fulls" src={logo} alt="logo.jpg" />
-                    <span className="text-2xl font-bold text-[#005B96]">BaBa B.K. school</span>
-                  </div>
-         
-          <p className="mb-4">v1.1.0</p>
-          <p className="mb-4">Get In Touch</p>
+            <img className="w-15 h-15 object-cover rounded-fulls" src={logo} alt="logo.jpg" />
+            <span className="text-2xl font-bold text-[#005B96]">बाबा बी.के. स्मारक विद्यालय</span>
+          </div>
+
+
+          <p className="mb-4 mt-3 font-semibold">Get In Touch</p>
           <ul className="space-y-2">
             <li className="flex items-center gap-2">
               <span className="text-lg">🧩</span>
@@ -69,15 +68,23 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="mt-12 bg-[#f5f8fb] py-1 px-3 rounded-full flex flex-col md:flex-row items-center justify-between">
+      <div className="mt-12 bg-blue-50 py-1 px-3 rounded-full flex flex-col md:flex-row items-center justify-between">
         <p className="text-sm">Copyright © 2025 Difmo</p>
         <div className="flex items-center gap-3 mt-2 md:mt-6 mb-3">
-          <a href="#" aria-label="WhatsApp" className="text-[#005B96] text-lg"><SiWhatsapp /></a>
+          <a
+            href="https://wa.me/918948557071?text=Hi%20there%2C%20I%20want%20to%20know%20more!"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="border border-[#005B96] rounded-full p-2">
+              <FaWhatsapp className="text-[#005B96]" />
+            </button>
+          </a>
           <a href="#" aria-label="Facebook" className="text-[#005B96] text-lg"><FaFacebookF /></a>
           <a href="#" aria-label="YouTube" className="text-[#005B96] text-lg"><FaYoutube /></a>
           <a href="#" aria-label="Instagram" className="text-[#005B96] text-lg"><FaInstagram /></a>
           {/* <a href="#" aria-label="Teligram" className="text-[#005B96] text-lg"><FaTeligram /></a> */}
-          
+
         </div>
       </div>
     </footer>
