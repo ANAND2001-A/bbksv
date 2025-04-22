@@ -1,10 +1,10 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar.jsx";
-// import Footer from "../component/Footer.jsx";
-// import FloatingActionButton from "../pages/FloatingActionButton.jsx";
+import Footer from "../components/Footer.jsx";
+import FloatingActionButton from "../components/FloatingActionButton.jsx";
 
-const Layout = ({childern}) => {
+const MainLayout = ({childern}) => {
   return (
     <>
       <Navbar />
@@ -12,10 +12,10 @@ const Layout = ({childern}) => {
         <Outlet /> 
         {childern}{/* Renders the nested child route like Home */}
       </main>
-      {/* <FloatingActionButton /> */}
-      {/* <Footer /> */}
+      <FloatingActionButton />
+      <Footer />
     </>
   );
 };
 
-export default Layout;
+export default MainLayout;

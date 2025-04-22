@@ -1,15 +1,17 @@
 import { FaFacebookF, FaYoutube, FaInstagram  } from 'react-icons/fa';
 import {  SiWhatsapp  } from 'react-icons/si';
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logos/bbksv.png";
+import React from 'react';
+
 export default function Footer() {
   return (
     <footer className="bg-white text-gray-700 px-22 py-15">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Column 1*/}
+        {/* Column 1 */}
         <div>
           <div className="flex items-center gap-2">
                     <img className="w-10 h-10 object-cover rounded-fulls" src={logo} alt="logo.jpg" />
-                    <span className="text-2xl font-bold text-[#005B96]">BaBa B.K</span>
+                    <span className="text-2xl font-bold text-[#005B96]">BaBa B.K. school</span>
                   </div>
          
           <p className="mb-4">v1.1.0</p>
@@ -20,19 +22,19 @@ export default function Footer() {
               <span>Baba B.K. Smarak Vidyalaya</span>
             </li>
             <li className="flex items-center gap-2">
-              <a href="tel:+916392006343" target="_blank" rel="noopener noreferrer" className="text-lg">📞</a>
-              <span>6392006343</span>
+              <a href="tel:+919918341985" target="_blank" rel="noopener noreferrer" className="text-lg">📞</a>
+              <span>9918341985</span>
             </li>
             <li className="flex items-center gap-2">
-              <a href="mailto:anandyadav01782@gmail.com" target="_blank" rel="noopener noreferrer" className="text-lg">✉️</a>
-              <span>anandyadav01782@gmail.com</span>
+              <a href="mailto:yourbbksv@gmail.com" target="_blank" rel="noopener noreferrer" className="text-lg">✉️</a>
+              <span>yourbbksv@gmail.com</span>
             </li>
           </ul>
         </div>
 
         {/* Column 2 */}
         <div className="mr-10">
-          <h3 className="text-lg font-semibold mb-4">Company</h3>
+          <h3 className="text-lg font-semibold mb-4">For Us</h3>
           <ul className="space-y-2">
             <li><a href="#" className="hover:text-[#005B96]">Home</a></li>
             <li><a href="#" className="hover:text-[#005B96]">About</a></li>

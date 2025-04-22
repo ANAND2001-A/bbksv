@@ -3,9 +3,9 @@ import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 
 // Import your images
-import banner1 from '../assets/school.jpg';
-import banner2 from '../assets/school1.jpg';
-import banner3 from '../assets/school.jpg';
+import banner1 from '../assets/logos/home_img/kids.jpg';
+import banner2 from '../assets/logos/home_img/kids.jpg';
+import banner3 from '../assets/logos/home_img/kids.jpg';
 
 const slideImages = [
   {
@@ -22,7 +22,7 @@ const slideImages = [
   },
 ];
 
-const Slider = () => {
+const Home = () => {
   return (
     <div className="slide-container" style={{ margin: '0 auto', maxWidth: '1360px' }}>
       <Slide indicators arrows>
@@ -52,4 +52,5 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default Home;
+
