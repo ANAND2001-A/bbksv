@@ -35,8 +35,7 @@ export default function Navbar({ children }) {
 
   const linkClass = (hash) =>
     `bg-transparent p-3 rounded-full flex text-[1.1rem] text-white 
-    hover:bg-black/30 transition-all duration-300 ${
-      activeNav === hash ? 'bg-[#005B96] text-white' : ''
+    hover:bg-black/30 transition-all duration-300 ${activeNav === hash ? 'bg-[#005B96] text-white' : ''
     }`;
 
   return (
@@ -45,10 +44,20 @@ export default function Navbar({ children }) {
       <nav className="bg-white px-4 py-3 shadow-sm hidden lg:block">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
+          <Link to="/">
           <div className="flex items-center gap-2">
-            <img className="w-15 h-15 object-cover rounded-full" src={logo} alt="logo" />
-            <span className="text-2xl font-bold text-[#005B96]">बाबा बी.के. स्मारक विद्यालय</span>
+            
+              <img
+                className="w-15 h-15 object-cover rounded-full cursor-pointer"
+                src={logo}
+                alt="logo"
+              />
+            
+            <span className="text-2xl font-bold text-[#005B96]">
+              बाबा बी.के. स्मारक विद्यालय
+            </span>
           </div>
+          </Link>
 
           {/* Menu */}
           <div className="bg-blue-50 text-[#005B96] rounded-full px-6 py-2 flex items-center gap-6 shadow-sm relative">
