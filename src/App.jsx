@@ -8,6 +8,7 @@ import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import Blog from "./pages/Blog.jsx";
 import GallarySection from "./pages/GallarySection.jsx";
+import Courses from "./pages/Courses.jsx";
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog/>} />
         <Route path="/gallary" element={<GallarySection />} />
-        
+        <Route path="/courses" element= {<Courses />}    />   
        
         </Route>
       </Routes>

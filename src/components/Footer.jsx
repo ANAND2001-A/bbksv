@@ -1,6 +1,9 @@
-import { FaFacebookF, FaYoutube, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebookF, FaYoutube, FaInstagram, FaWhatsapp, FaSchool, FaMailBulk } from 'react-icons/fa';
+import { FaPhone } from 'react-icons/fa';
+
 import logo from "../assets/logos/bbksv.png";
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -8,26 +11,62 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Column 1 */}
         <div>
+
           <div className="flex items-center gap-2">
-            <img className="w-15 h-15 object-cover rounded-fulls" src={logo} alt="logo.jpg" />
-            <span className="text-2xl font-bold text-[#005B96]">बाबा बी.के. स्मारक विद्यालय</span>
+            <Link to="/">
+              <img className="w-15 h-15 object-cover rounded-fulls" src={logo} alt="logo.jpg" />
+            </Link>
+            <div className="flex items-center gap-2">
+              {/* Text clickable to open Google Maps in a new tab */}
+              <a
+                href="https://www.google.com/maps/place/Baba+Bk+School/@26.1504936,82.7959568,17z/data=!3m1!4b1!4m6!3m5!1s0x3990570051e6b28b:0x4405712d68fd4e2b!8m2!3d26.1504936!4d82.7985317!16s%2Fg%2F11w1qxh_1v?entry=ttu&g_ep=EgoyMDI1MDQyMC4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-2xl font-bold text-[#005B96] hover:underline"
+              >
+                बाबा बी.के. स्मारक विद्यालय
+              </a>
+            </div>
           </div>
-
-
           <p className="mb-4 mt-3 font-semibold">Get In Touch</p>
           <ul className="space-y-2">
             <li className="flex items-center gap-2">
-              <span className="text-lg">🧩</span>
-              <span>Baba B.K. Smarak Vidyalaya</span>
+              <span className="text-lg"><FaSchool /></span>
+              {/* Clickable Text for Google Maps all of thid  */}
+              <a
+                href="https://www.google.com/maps/place/Baba+Bk+School/@26.1504936,82.7959568,17z/data=!3m1!4b1!4m6!3m5!1s0x3990570051e6b28b:0x4405712d68fd4e2b!8m2!3d26.1504936!4d82.7985317!16s%2Fg%2F11w1qxh_1v?entry=ttu&g_ep=EgoyMDI1MDQyMC4wIKXMDSoASAFQAw%3D%3D"
+                
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg text-[#005B96] hover:underline"
+              >
+                बाबा बी.के. स्मारक विद्यालय
+              </a>
             </li>
             <li className="flex items-center gap-2">
-              <a href="tel:+919918341985" target="_blank" rel="noopener noreferrer" className="text-lg">📞</a>
-              <span>9918341985</span>
+              <a
+                href="tel:+919918341985"
+                className="text-lg flex items-center gap-2 text-inherit hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaPhone />
+                <span>9918341985</span>
+              </a>
             </li>
+
             <li className="flex items-center gap-2">
-              <a href="mailto:yourbbksv@gmail.com" target="_blank" rel="noopener noreferrer" className="text-lg">✉️</a>
-              <span>yourbbksv@gmail.com</span>
+              <a
+                href="mailto:yourbbksv@gmail.com"
+                className="text-lg flex items-center gap-2 text-inherit hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaMailBulk />
+                <span>yourbbksv@gmail.com</span>
+              </a>
             </li>
+
           </ul>
         </div>
 
@@ -68,7 +107,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="mt-12 bg-blue-50 py-1 px-3 rounded-full flex flex-col md:flex-row items-center justify-between">
+      <div className="mt-10 bg-blue-50 py-1 px-3 rounded-full flex flex-col md:flex-row items-center justify-between">
         <p className="text-sm">Copyright © 2025 Difmo</p>
         <div className="flex items-center gap-3 mt-2 md:mt-6 mb-3">
           <a
@@ -76,13 +115,13 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="border border-[#005B96] rounded-full p-2">
+            <button className="border border-[#005B96] rounded-full p-1">
               <FaWhatsapp className="text-[#005B96]" />
             </button>
           </a>
-          <a href="#" aria-label="Facebook" className="text-[#005B96] text-lg"><FaFacebookF /></a>
-          <a href="#" aria-label="YouTube" className="text-[#005B96] text-lg"><FaYoutube /></a>
-          <a href="#" aria-label="Instagram" className="text-[#005B96] text-lg"><FaInstagram /></a>
+          <a href="#" aria-label="Facebook" className="text-[#005B96] text-lg "><FaFacebookF /></a>
+          <a href="#" aria-label="YouTube" className="text-[#005B96] text-lg "><FaYoutube /></a>
+          <a href="#" aria-label="Instagram" className="text-[#005B96] text-lg "><FaInstagram /></a>
           {/* <a href="#" aria-label="Teligram" className="text-[#005B96] text-lg"><FaTeligram /></a> */}
 
         </div>
