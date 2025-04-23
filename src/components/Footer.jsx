@@ -68,7 +68,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="mt-12 bg-blue-50 py-1 px-3 rounded-full flex flex-col md:flex-row items-center justify-between">
+      <div className="mt-10 bg-blue-50 py-1 px-3 rounded-full flex flex-col md:flex-row items-center justify-between">
         <p className="text-sm">Copyright © 2025 Difmo</p>
         <div className="flex items-center gap-3 mt-2 md:mt-6 mb-3">
           <a
@@ -76,13 +76,13 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="border border-[#005B96] rounded-full p-2">
+            <button className="border border-[#005B96] rounded-full p-1">
               <FaWhatsapp className="text-[#005B96]" />
             </button>
           </a>
-          <a href="#" aria-label="Facebook" className="text-[#005B96] text-lg"><FaFacebookF /></a>
-          <a href="#" aria-label="YouTube" className="text-[#005B96] text-lg"><FaYoutube /></a>
-          <a href="#" aria-label="Instagram" className="text-[#005B96] text-lg"><FaInstagram /></a>
+          <a href="#" aria-label="Facebook" className="text-[#005B96] text-lg "><FaFacebookF /></a>
+          <a href="#" aria-label="YouTube" className="text-[#005B96] text-lg "><FaYoutube /></a>
+          <a href="#" aria-label="Instagram" className="text-[#005B96] text-lg "><FaInstagram /></a>
           {/* <a href="#" aria-label="Teligram" className="text-[#005B96] text-lg"><FaTeligram /></a> */}
 
         </div>
