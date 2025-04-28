@@ -1,6 +1,4 @@
-import { FaFacebookF, FaYoutube, FaInstagram, FaWhatsapp, FaSchool, FaMailBulk } from 'react-icons/fa';
-import { FaPhone } from 'react-icons/fa';
-
+import { FaFacebook, FaYoutube, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import logo from "../assets/logos/bbksv.png";
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -74,10 +72,10 @@ export default function Footer() {
         <div className="mr-10">
           <h3 className="text-lg font-semibold mb-4">For Us</h3>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-[#005B96]">Home</a></li>
-            <li><a href="#" className="hover:text-[#005B96]">About</a></li>
-            <li><a href="#" className="hover:text-[#005B96]">Carear</a></li>
-            <li><a href="#" className="hover:text-[#005B96]">Contact Us</a></li>
+            <li><Link to="/" className="hover:text-[#005B96]">Home</Link></li>
+            <li><Link to="/about" className="hover:text-[#005B96]">About</Link></li>
+            <li><Link to="/carear" className="hover:text-[#005B96]">Carear</Link></li>
+            <li><Link to="/contact" className="hover:text-[#005B96]">Contact Us</Link></li>
           </ul>
         </div>
 
@@ -119,10 +117,13 @@ export default function Footer() {
               <FaWhatsapp className="text-[#005B96]" />
             </button>
           </a>
-          <a href="#" aria-label="Facebook" className="text-[#005B96] text-lg "><FaFacebookF /></a>
-          <a href="#" aria-label="YouTube" className="text-[#005B96] text-lg "><FaYoutube /></a>
-          <a href="#" aria-label="Instagram" className="text-[#005B96] text-lg "><FaInstagram /></a>
-          {/* <a href="#" aria-label="Teligram" className="text-[#005B96] text-lg"><FaTeligram /></a> */}
+          <a href="https://www.facebook.com/share/1BH3JosKM5/
+" aria-label="Facebook" className="text-[#005B96] text-lg"><FaFacebook /></a>
+          <a href="https://www.youtube.com/@BabaBkSchool " aria-label="YouTube" className="text-[#005B96] text-lg"><FaYoutube /></a>
+          <a href=" https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=p834aks
+
+" aria-label="Instagram" className="text-[#005B96] text-lg"><FaInstagram /></a>
+          
 
         </div>
       </div>

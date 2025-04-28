@@ -80,7 +80,7 @@ export default function Navbar({ children }) {
 
             <Link to="/teacher">Teacher</Link>
             <Link to="/gallary">Gallary</Link>
-            <Link to="/admin">Dashboard</Link>
+            <Link to="/dasbord">Dasbord</Link>
 
             {/* Pages Dropdown */}
             <div className="relative" ref={pagesRef}>
