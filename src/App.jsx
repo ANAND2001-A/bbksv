@@ -9,6 +9,7 @@ import Contact from "./pages/Contact.jsx";
 import Blog from "./pages/Blog.jsx";
 import GallarySection from "./pages/GallarySection.jsx";
 import Courses from "./pages/Courses.jsx";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 function App() {
