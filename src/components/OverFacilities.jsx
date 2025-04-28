@@ -10,33 +10,33 @@ import { FaRestroom } from 'react-icons/fa';
 const features = [
   {
     icon: <Bus className="w-6 h-6 text-blue-900" />,
-    title: "College Bus Service",
-    description: "Safe and comfortable transport for daily commute.",
+    title: "कॉलेज बस सेवा",
+    description: "दैनिक आवागमन के लिए सुरक्षित और आरामदायक परिवहन सुविधा।",
   },
   {
     icon: <Dribbble className="w-6 h-6 text-blue-900" />,  // Playground icon
-    title: "Playground",
-    description: "Spacious playground for sports and physical activities.",
+    title: "खेल का मैदान",
+    description: "खेल और शारीरिक गतिविधियों के लिए विशाल मैदान।",
   },
   {
     icon: <BookOpen className="w-6 h-6 text-blue-900" />,
-    title: "Best Teachers",
-    description: "Highly qualified and experienced teaching staff for exceptional learning.",
+    title: "श्रेष्ठ शिक्षक",
+    description: "उच्च योग्यताप्राप्त और अनुभवी शिक्षकों द्वारा उत्कृष्ट शिक्षा।",
   },
   {
     icon: <BookOpen className="w-6 h-6 text-blue-900" />,  // Libraries icon
-    title: "Libraries",
-    description: "A vast collection of books and digital resources for comprehensive learning.",
+    title: "पुस्तकालय",
+    description: "व्यापक अध्ययन के लिए पुस्तकों और डिजिटल संसाधनों का विशाल संग्रह।",
   },
   {
     icon: <IoWater className="w-6 h-6 text-blue-900" />,  // Fresh Water icon
-    title: "Cold & Fresh Water",
-    description: "Clean and refreshing water dispensers across the campus.",
+    title: "ठंडा और ताज़ा पानी",
+    description: "कैम्पस में स्वच्छ और ताज़ा पानी के डिस्पेंसर उपलब्ध।",
   },
   {
     icon: <FaRestroom className="w-6 h-6 text-blue-900" />,  // Classrooms and Labs icon
-    title: "Classrooms & Labs",
-    description: "State-of-the-art classrooms and well-equipped labs for practical learning.",
+    title: "कक्षाएँ और प्रयोगशालाएँ",
+    description: "व्यावहारिक शिक्षा के लिए अत्याधुनिक कक्षाएँ और सुसज्जित प्रयोगशालाएँ।",
   },
 ];
 
@@ -44,7 +44,7 @@ const OverFacilities = () => {
   return (
     <div className="px-6 py-12 text-center bg-white">
       <h2 className="text-3xl font-semibold mb-12">
-      Over Facilities
+        Over Facilities
       </h2>
 
       <div className="grid md:grid-cols-3 gap-6 bg-blue-50 p-6 rounded-3xl max-w-6xl mx-auto">
@@ -60,7 +60,7 @@ const OverFacilities = () => {
         ))}
       </div>
 
-      {/* <p className="mt-12 text-gray-800 text-lg">
+      <p className="mt-12 text-gray-800 text-lg">
         Ready to explore the facilities that shape your future?
       </p>
 
@@ -71,7 +71,7 @@ const OverFacilities = () => {
         <button className="px-6 py-2 rounded-full bg-blue-800 text-white hover:bg-blue-900 transition">
           Contact Us
         </button>
-      </div> */}
+      </div> 
     </div>
   );
 };

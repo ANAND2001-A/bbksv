@@ -62,16 +62,16 @@ export default function Navbar({ children }) {
               </div>
               {showLandings && (
                 <div className="absolute left-0 top-full mt-2 bg-white rounded-md shadow-md w-40 py-2 z-20 text-[#005B96] flex flex-col">
-                  <Link to="/courses/1" className="block px-4 py-2 hover:bg-gray-100">Courses 1</Link>
-                  <Link to="/courses/2" className="block px-4 py-2 hover:bg-gray-100">Courses 2</Link>
-                  <Link to="/courses/3" className="block px-4 py-2 hover:bg-gray-100">Courses 3</Link>
+                  <Link to="/courses" className="block px-4 py-2 hover:bg-gray-100">Courses 1</Link>
+                  <Link to="/courses" className="block px-4 py-2 hover:bg-gray-100">Courses 2</Link>
+                  <Link to="/courses" className="block px-4 py-2 hover:bg-gray-100">Courses 3</Link>
                 </div>
               )}
             </div>
 
             <Link to="/teacher">Teacher</Link>
             <Link to="/gallary">Gallary</Link>
-            <Link to="/admin">Dashboard</Link>
+            <Link to="/dasbord">Dasbord</Link>
 
             {/* Pages Dropdown */}
             <div className="relative" ref={pagesRef}>

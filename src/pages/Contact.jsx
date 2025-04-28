@@ -182,28 +182,28 @@ const Contact = () => {
                       <i className="fas fa-map-marker-alt text-custom w-5 mt-1"></i>
                     </div>
                     <div className="ml-3">
-                      <p className="text-gray-900">123 Business Street</p>
-                      <p className="text-gray-600">Suite 100</p>
-                      <p className="text-gray-600">New York, NY 10001</p>
+                      <p className="text-gray-900">Lahurampur Mahul </p>
+                      <p className="text-gray-600">Azamgarh</p>
+                      <p className="text-gray-600">U.P In India 223225</p>
                     </div>
                   </a>
                 </div>
                 <div className="flex items-center">
                   <i className="fas fa-phone text-custom w-5"></i>
                   <a
-                    href="tel:+916392006343"
+                    href="tel:+918948557071"
                     className="ml-3 text-gray-900 hover:text-custom"
                   >
-                    +91 (639) 200-6343
+                    +91 8948557071
                   </a>
                 </div>
                 <div className="flex items-center">
                   <i className="fas fa-envelope text-custom w-5"></i>
                   <a
-                    href="mailto:anandyadav1782gmail.com"
+                    href="mailto:yourbbksv@gmail.com"
                     className="ml-3 text-gray-900 hover:text-custom"
                   >
-                    anandyadav1782gmail.com
+                    yourbbksv@gmail.com
                   </a>
                 </div>
                 <div className="flex items-start">
@@ -215,7 +215,7 @@ const Contact = () => {
                 </div>
               </div>
               <div className="mt-8 ml-10">
-                <h4 className="text-lg font-medium mb-4">Follow Us</h4>
+                {/* <h4 className="text-lg font-medium mb-4">Follow Us</h4> */}
                 <div className="flex space-x-4 ml-6">
                   <a href="#" className="text-gray-400 hover:text-custom">
                     <i className="fab fa-facebook-f text-xl"></i>
