@@ -1,4 +1,4 @@
-import { FaFacebook, FaYoutube, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebook, FaYoutube, FaInstagram, FaWhatsapp, FaSchool, FaPhone, FaMailBulk } from 'react-icons/fa';
 import logo from "../assets/logos/bbksv.png";
 import React from 'react';
 import { Link } from 'react-router-dom';

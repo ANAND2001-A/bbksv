@@ -5,7 +5,6 @@ import React from 'react';
 import MainLayout from "./layouts/MainLayout.jsx";
 import MainRoute from "./layouts/MainRoute.jsx";
 import About from "./pages/About.jsx";
-import Courses from "./pages/Courses.jsx";
 import Teacher from "./pages/Teacher.jsx";
 import Contact from "./pages/Contact.jsx";
 import Blog from "./pages/Blog.jsx";
