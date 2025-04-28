@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion"; // <<-- import
 
 const courses = [
   {
@@ -43,34 +44,50 @@ const Courses = () => {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800 p-6">
       <div className="max-w-7xl mx-auto space-y-12">
+        
         {/* Header */}
-        <div className="text-center">
+        <motion.div 
+          className="text-center"
+          initial={{ x: -150, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           <h1 className="text-4xl md:text-5xl font-bold text-indigo-900 mb-2">
             Explore Our Courses
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Every subject is carefully designed to inspire curiosity, deepen understanding, and build confidence in every student from class 1 to 12.
           </p>
-        </div>
+        </motion.div>
 
         {/* Courses Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map((course, idx) => (
-            <div
+            <motion.div
               key={idx}
               className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg border border-gray-200 hover:scale-[1.02] transition"
+              initial={{ x: -150, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: idx * 0.2 }}
             >
               <div className="text-5xl mb-3">{course.icon}</div>
               <h2 className="text-2xl font-semibold text-indigo-800 mb-2">
                 {course.title}
               </h2>
               <p className="text-gray-700 text-sm">{course.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Call to Action */}
-        <div className="bg-indigo-100 p-8 rounded-2xl text-center shadow-inner">
+        <motion.div 
+          className="bg-indigo-100 p-8 rounded-2xl text-center shadow-inner"
+          initial={{ x: -150, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
           <h3 className="text-2xl font-semibold text-indigo-900">
             Ready to Learn?
           </h3>
@@ -83,7 +100,7 @@ const Courses = () => {
           >
             Contact Now
           </a>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
