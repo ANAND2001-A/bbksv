@@ -10,7 +10,7 @@ const faqData = {
     {
       question: "अपने विद्यालय का प्राथमिक से इंटरमीडिएट स्तर तक संक्षिप्त विवरण दीजिए।",
       answer:
-        "[बाबा बी.के स्कूल] एक प्रसिद्ध शैक्षणिक संस्थान है जो प्राथमिक (कक्षा 1) से इंटरमीडिएट (कक्षा 12) तक समग्र शिक्षा प्रदान करता है। विद्यालय अकादमिक उत्कृष्टता, चरित्र निर्माण और छात्रों के सर्वांगीण विकास के प्रति प्रतिबद्ध है। अनुभवी शिक्षकों, आधुनिक कक्षाओं, समृद्ध पुस्तकालय, कंप्यूटर और विज्ञान प्रयोगशालाओं तथा विभिन्न सह-पाठ्यक्रम गतिविधियों के साथ, यह एक संतुलित शैक्षिक वातावरण प्रदान करता है। यहाँ न केवल पढ़ाई पर बल दिया जाता है, बल्कि अनुशासन, रचनात्मकता, नेतृत्व और सामाजिक जिम्मेदारी को भी विकसित किया जाता है। नियमित कार्यशालाएँ, खेलकूद और सांस्कृतिक कार्यक्रम छात्रों के समग्र विकास में सहायक होते हैं। विद्यालय का उद्देश्य आत्मविश्वासी, सक्षम और जिम्मेदार नागरिक तैयार करना है।",
+        "[बाबा बी.के स्कूल] एक प्रसिद्ध शैक्षणिक संस्थान है जो प्राथमिक (कक्षा 1) से इंटरमीडिएट (कक्षा 12) तक समग्र शिक्षा प्रदान करता है। विद्यालय अकादमिक उत्कृष्टता, चरित्र निर्माण और छात्रों के सर्वांगीण विकास के प्रति प्रतिबद्ध है। अनुभवी शिक्षकों, आधुनिक कक्षाओं, समृद्ध पुस्तकालय, कंप्यूटर और विज्ञान प्रयोगशालाओं तथा विभिन्न सह-पाठ्यक्रम गतिविधियों के साथ, यह एक संतुलित शैक्षणिक वातावरण प्रदान करता है। यहाँ न केवल पढ़ाई पर बल दिया जाता है, बल्कि अनुशासन, रचनात्मकता, नेतृत्व और सामाजिक जिम्मेदारी को भी विकसित किया जाता है। नियमित कार्यशालाएँ, खेलकूद और सांस्कृतिक कार्यक्रम छात्रों के समग्र विकास में सहायक होते हैं। विद्यालय का उद्देश्य आत्मविश्वासी, सक्षम और जिम्मेदार नागरिक तैयार करना है।",
     },
     {
       question: "अपने विद्यालय का 100–150 शब्दों में विवरण दीजिए।",
@@ -71,12 +71,15 @@ const Frequently = () => {
         बाबा बी.के स्कूल से जुड़े सामान्य प्रश्नों के उत्तर।
       </p>
 
+      {/* Tabs */}
       <div className="flex flex-wrap gap-3 mb-8">
         {Object.keys(faqData).map((tab) => (
           <button
             key={tab}
             className={`px-4 py-2 rounded-full border ${
-              selectedTab === tab ? "bg-black text-white" : "bg-white text-black"
+              selectedTab === tab
+                ? "bg-black text-white"
+                : "bg-white text-black"
             }`}
             onClick={() => {
               setSelectedTab(tab);
@@ -88,24 +91,30 @@ const Frequently = () => {
         ))}
       </div>
 
+      {/* Questions & Answers */}
       <div className="space-y-4">
-        {faqData[selectedTab].map((item, index) => (
-          <div
-            key={index}
-            className="bg-blue-50 px-6 py-4 rounded-lg cursor-pointer"
-            onClick={() => handleToggle(index)}
-          >
-            <div className="flex justify-between items-center">
-              <h4 className="font-medium">{item.question}</h4>
-              <span className="text-xl font-bold">
-                {openIndex === index ? "-" : "+"}
-              </span>
+        {faqData[selectedTab].map((item, index) => {
+          const isOpen = openIndex === index;
+          return (
+            <div
+              key={index}
+              className="bg-blue-50 px-6 py-4 rounded-lg cursor-pointer transition-all duration-300 ease-in-out"
+              onClick={() => handleToggle(index)}
+            >
+              <div className="flex justify-between items-center">
+                <h4 className="font-medium">{item.question}</h4>
+                <span className="text-xl font-bold">{isOpen ? "-" : "+"}</span>
+              </div>
+              <div
+                className={`overflow-hidden transition-all duration-500 transform ${
+                  isOpen ? "translate-x-0 opacity-100 max-h-[1000px]" : "-translate-x-full opacity-0 max-h-0"
+                }`}
+              >
+                <p className="text-gray-700 mt-2">{item.answer}</p>
+              </div>
             </div>
-            {openIndex === index && (
-              <p className="text-gray-700 mt-2">{item.answer}</p>
-            )}
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

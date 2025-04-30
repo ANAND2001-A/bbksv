@@ -189,8 +189,14 @@ const Contact = () => {
                   placeholder="Enter your message"
                 ></textarea>
               </div>
+<<<<<<< HEAD
 
               <CustomButton type="submit">Submit</CustomButton>
+=======
+              <CustomButton type="submit" >
+              Submit
+              </CustomButton>
+>>>>>>> astha
             </form>
           </motion.div>
 

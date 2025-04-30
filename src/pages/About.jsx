@@ -295,54 +295,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      {/* Testimonials */}
-      {/* <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
-            What People Say
-          </h2>
-          <div className="max-w-4xl mx-auto">
-            <div className="relative">
-              {testimonials.map((testimonial, index) => (
-                <div
-                  key=
-                        src={testimonial.imageUrl}
-                        alt={testimonial.name}
-                        className="w-16 h-16 rounded-full object-cover mr-4"
-                      />
-                      <div>
-                        <h4 className="font-bold text-gray-800">
-                          {testimonial.name}
-                        </h4>
-                        <p className="text-gray-600 text-sm">
-                          {testimonial.role}
-                        </p>
-                      </div>
-                    </div>
-                    <p className="text-gray-700 italic leading-relaxed">
-                      "{testimonial.quote}"
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="flex justify-center mt-6 space-x-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveTestimonial(index)}
-                  className={`w-3 h-3 rounded-full ${
-                    index === activeTestimonial ? "bg-blue-600" : "bg-gray-300"
-                  } cursor-pointer rounded-full`}
-                  aria-label={`View testimonial ${index + 1}`}
-                ></button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section> */}
-      {/* CTA Section */}
       <section className="py-16 bg-blue-200 text-black">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Join BaBa B.K?</h2>
