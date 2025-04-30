@@ -11,7 +11,6 @@ export default function Footer() {
         <div>
 
           <div className="flex items-center gap-2">
-<<<<<<< HEAD
             <Link to="/">
               <img className="w-15 h-15 object-cover rounded-fulls" src={logo} alt="logo.jpg" />
             </Link>
@@ -27,12 +26,6 @@ export default function Footer() {
               </a>
             </div>
           </div>
-=======
-            <img className="w-16 h-16 object-cover rounded-full" src={logo} alt="logo" />
-            <span className="text-2xl font-bold text-[#005B96]">बाबा बी.के. स्मारक विद्यालय</span>
-          </div>
-
->>>>>>> astha
           <p className="mb-4 mt-3 font-semibold">Get In Touch</p>
           <ul className="space-y-2">
             <li className="flex items-center gap-2">
@@ -112,11 +105,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-<<<<<<< HEAD
       <div className="mt-10 bg-blue-50 py-1 px-3 rounded-full flex flex-col md:flex-row items-center justify-between">
-=======
-      <div className="mt-12 bg-white py-3 px-6 rounded-full flex flex-col md:flex-row items-center justify-between shadow-sm">
->>>>>>> astha
         <p className="text-sm">Copyright © 2025 Difmo</p>
         <div className="flex items-center gap-3 mt-2 md:mt-0">
           <a
@@ -124,11 +113,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-<<<<<<< HEAD
             <button className="border border-[#005B96] rounded-full p-1">
-=======
-            <button className="border border-[#005B96] rounded-full p-2 hover:bg-[#005B96]/10">
->>>>>>> astha
               <FaWhatsapp className="text-[#005B96]" />
             </button>
           </a>

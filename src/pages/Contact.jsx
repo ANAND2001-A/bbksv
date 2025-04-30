@@ -120,7 +120,7 @@ const Contact = () => {
                     value={formData.fullName}
                     onChange={handleInputChange}
                     required
-                    className="!rounded-button block w-full pl-10 py-3 border border-gray-300 focus:ring-custom focus:border-custom"
+                    className="!rounded-button block w-full pl-10 py-3 border border-gray-300 focus:ring-custom focus:border-custom rounded-lg"
                     placeholder="Enter your name"
                   />
                 </div>
@@ -138,7 +138,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="!rounded-button block w-full pl-10 py-3 border border-gray-300 focus:ring-custom focus:border-custom"
+                    className="!rounded-button block w-full pl-10 py-3 border border-gray-300 focus:ring-custom focus:border-custom rounded-lg"
                     placeholder="Enter your email"
                   />
                 </div>
@@ -156,7 +156,7 @@ const Contact = () => {
                     value={formData.phoneNumber}
                     onChange={handleInputChange}
                     required
-                    className="!rounded-button block w-full pl-10 py-3 border border-gray-300 focus:ring-custom focus:border-custom"
+                    className="!rounded-button block w-full pl-10 py-3 border border-gray-300 focus:ring-custom focus:border-custom rounded-lg"
                     placeholder="Enter your phone number"
                   />
                 </div>
@@ -168,7 +168,7 @@ const Contact = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className="!rounded-button block w-full py-3 border border-gray-300 focus:ring-custom focus:border-custom"
+                  className="!rounded-button block w-full py-3 border border-gray-300 focus:ring-custom focus:border-custom rounded-lg"
                 >
                   <option>General Inquiry</option>
                   <option>Technical Support</option>
@@ -185,18 +185,12 @@ const Contact = () => {
                   onChange={handleInputChange}
                   rows="4"
                   required
-                  className="!rounded-button block w-full py-3 border border-gray-300 focus:ring-custom focus:border-custom"
+                  className="!rounded-button block w-full py-3 pl-4 border border-gray-300 focus:ring-custom focus:border-custom rounded-lg"
                   placeholder="Enter your message"
                 ></textarea>
               </div>
-<<<<<<< HEAD
 
               <CustomButton type="submit">Submit</CustomButton>
-=======
-              <CustomButton type="submit" >
-              Submit
-              </CustomButton>
->>>>>>> astha
             </form>
           </motion.div>
 
@@ -265,6 +259,7 @@ const Contact = () => {
                   <a href="#" className="text-gray-400 hover:text-custom"><i className="fab fa-twitter text-xl"></i></a>
                   <a href="#" className="text-gray-400 hover:text-custom"><i className="fab fa-linkedin-in text-xl"></i></a>
                   <a href="#" className="text-gray-400 hover:text-custom"><i className="fab fa-instagram text-xl"></i></a>
+                  
                 </div>
               </div>
             </motion.div>
@@ -300,13 +295,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-
-      {/* Floating Button */}
-      <div className="fixed bottom-4 right-4">
-        <button className="!rounded-button bg-custom text-white p-4 shadow-lg hover:bg-opacity-90 transition-colors">
-          <i className="fas fa-comments text-xl"></i>
-        </button>
-      </div>
+      
     </div>
   );
 };
