@@ -3,9 +3,11 @@ import {
   Bus,
   Dribbble, // We'll use Dribbble as the Playground icon
   BookOpen, // For Libraries
-} from 'lucide-react'; 
+} from 'lucide-react';
 import { IoWater } from 'react-icons/io5';
 import { FaRestroom } from 'react-icons/fa';
+import CustomButton from './CustomButton';
+import { Link } from 'react-router-dom';
 
 const features = [
   {
@@ -65,13 +67,17 @@ const OverFacilities = () => {
       </p>
 
       <div className="mt-6 flex justify-center gap-4">
-        <button className="px-6 py-2 rounded-full border border-blue-900 text-blue-800 hover:bg-blue-50 transition">
+        <Link to={"/courses"}>
+        <CustomButton>
           Explore More
-        </button>
-        <button className="px-6 py-2 rounded-full bg-blue-800 text-white hover:bg-blue-900 transition">
+        </CustomButton>
+          </Link>
+        <Link to={"/contact"}>
+        <CustomButton >
           Contact Us
-        </button>
-      </div> 
+        </CustomButton>
+        </Link>
+      </div>
     </div>
   );
 };

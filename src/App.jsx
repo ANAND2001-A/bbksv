@@ -11,6 +11,8 @@ import Blog from "./pages/Blog.jsx";
 import GallarySection from "./pages/GallarySection.jsx";
 import Courses from "./pages/Courses.jsx";
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import Login from "./auth/Login.jsx";
+import SignUp from "./auth/Signin.jsx";
 
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
         <Route path="/blog" element={<Blog/>} />
         <Route path="/gallary" element={<GallarySection />} />
         <Route path="/courses" element= {<Courses />}    />   
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
        
         </Route>
       </Routes>
