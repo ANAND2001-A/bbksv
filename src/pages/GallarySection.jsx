@@ -7,6 +7,8 @@ import {
   ChevronRight,
   X,
 } from "lucide-react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import img1 from "../assets/logos/home_img/kids.jpg";
 import CustomButton from "../components/CustomButton";
@@ -19,6 +21,10 @@ const GallarySection = () => {
   const [sortOption, setSortOption] = useState("Latest");
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
+
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
 
   const galleryImages = [
     {
@@ -96,8 +102,7 @@ const GallarySection = () => {
   });
 
   const indexOfLastImage = currentPage * itemsPerPage;
-  const indexOfFirstImage = 0;
-  const currentImages = sortedImages.slice(indexOfFirstImage, indexOfLastImage);
+  const currentImages = sortedImages.slice(0, indexOfLastImage);
 
   const openLightbox = (index) => {
     setCurrentImage(index);
@@ -135,7 +140,7 @@ const GallarySection = () => {
   }, [lightboxOpen, currentImage]);
 
   useEffect(() => {
-    setCurrentPage(1); // Reset page on category or sort change
+    setCurrentPage(1);
   }, [activeCategory, sortOption]);
 
   return (
@@ -146,7 +151,7 @@ const GallarySection = () => {
         facilities, and more.
       </p>
 
-      {/* Filter and Sort */}
+      {/* Filters */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
         <div className="flex flex-wrap gap-2">
           {categories.map((category) => (
@@ -192,18 +197,19 @@ const GallarySection = () => {
         </div>
       </div>
 
-      {/* Gallery Display */}
+      {/* Gallery View */}
       {viewMode === "grid" ? (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {currentImages.map((img, index) => (
             <div
               key={img.id}
-              className="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition"
+              data-aos="zoom-in"
+              className="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-transform hover:scale-105 transform hover:-translate-y-2"
             >
               <img
                 src={img.imageUrl}
                 alt={img.title}
-                className="w-full h-48 object-cover cursor-pointer hover:scale-105 transition-transform"
+                className="w-full h-48 object-cover cursor-pointer"
                 onClick={() => openLightbox(index)}
               />
               <div className="p-4">
@@ -218,7 +224,8 @@ const GallarySection = () => {
           {currentImages.map((img, index) => (
             <div
               key={img.id}
-              className="flex flex-col md:flex-row bg-white rounded-lg shadow overflow-hidden"
+              data-aos="fade-up"
+              className="flex flex-col md:flex-row bg-white rounded-lg shadow overflow-hidden transition transform hover:scale-105 hover:-translate-y-2"
             >
               <img
                 src={img.imageUrl}
@@ -236,10 +243,12 @@ const GallarySection = () => {
         </div>
       )}
 
-      {/* Show More Button */}
+      {/* Show More */}
       {currentPage * itemsPerPage < sortedImages.length && (
         <div className="flex justify-center mt-8">
-          <CustomButton type="submit">View More</CustomButton>
+          <CustomButton onClick={() => setCurrentPage(currentPage + 1)}>
+            View More
+          </CustomButton>
         </div>
       )}
 

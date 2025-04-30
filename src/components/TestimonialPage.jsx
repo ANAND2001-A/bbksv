@@ -2,7 +2,6 @@ import React from "react";
 import { Star } from "lucide-react";
 import img2 from "../assets/logos/bbksv.png";
 
-
 // Testimonial Data
 const testimonials = [
   {
@@ -43,6 +42,16 @@ const testimonials = [
   },
 ];
 
+// Light color backgrounds to rotate through
+const bgColors = [
+  "bg-blue-50",
+  "bg-green-50",
+  "bg-pink-50",
+  "bg-yellow-50",
+  "bg-purple-50",
+  "bg-orange-50",
+];
+
 const TestimonialPage = () => {
   return (
     <section className="max-w-6xl mx-auto px-4 md:px-8 py-12">
@@ -54,7 +63,9 @@ const TestimonialPage = () => {
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition transform hover:scale-105"
+            className={`p-6 rounded-2xl shadow-md hover:shadow-lg transition transform hover:scale-105 ${
+              bgColors[index % bgColors.length]
+            }`}
           >
             <div className="flex items-center gap-4 mb-4">
               <img
@@ -63,7 +74,9 @@ const TestimonialPage = () => {
                 className="h-16 w-16 rounded-full ring-2 ring-blue-200"
               />
               <div>
-                <h4 className="font-semibold text-gray-800">{testimonial.name}</h4>
+                <h4 className="font-semibold text-gray-800">
+                  {testimonial.name}
+                </h4>
                 <div className="flex items-center gap-1 text-yellow-500">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} size={18} fill="currentColor" />
@@ -71,7 +84,7 @@ const TestimonialPage = () => {
                 </div>
               </div>
             </div>
-            <p className="text-gray-600 text-sm">{testimonial.review}</p>
+            <p className="text-gray-700 text-sm">{testimonial.review}</p>
           </div>
         ))}
       </div>

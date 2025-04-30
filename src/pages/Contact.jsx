@@ -137,28 +137,6 @@ const Contact = () => {
                   placeholder="Enter your message"
                 ></textarea>
               </div>
-
-              {/* <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Attachment</label>
-                <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed !rounded-button">
-                  <div className="space-y-1 text-center">
-                    <i className="fas fa-cloud-upload-alt text-gray-400 text-3xl mb-3"></i>
-                    <div className="flex text-sm text-gray-600">
-                      <label className="relative cursor-pointer bg-white rounded-md font-medium text-custom hover:text-custom focus-within:outline-none">
-                        <span>Upload a file</span>
-                        <input
-                          type="file"
-                          className="sr-only"
-                          onChange={handleFileChange}
-                        />
-                      </label>
-                      <p className="pl-1">or drag and drop</p>
-                    </div>
-                    <p className="text-xs text-gray-500">PNG, JPG, PDF up to 10MB</p>
-                  </div>
-                </div>
-              </div> */}
-
               <CustomButton type="submit" >
               Submit
               </CustomButton>
