@@ -8,6 +8,9 @@ import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai';
 import { BiBook, BiMessageSquareDetail } from 'react-icons/bi';
 import { RiServiceLine } from 'react-icons/ri';
 import { GiTeacher } from "react-icons/gi";
+import whatsappAnimation from '../assets/icon/whatsapp.json';
+import Lottie from "lottie-react";
+
 
 export default function Navbar({ children }) {
   const [showLandings, setShowLandings] = useState(false);
@@ -114,13 +117,21 @@ export default function Navbar({ children }) {
 
           {/* Buttons */}
           <div className="flex items-center gap-3">
-            <a href="https://wa.me/918948557071?text=Hi%20there%2C%20I%20want%20to%20know%20more!" target="_blank" rel="noopener noreferrer">
-              <button className="border border-[#005B96] rounded-full p-2">
-                <FaWhatsapp className="text-[#005B96]" />
-              </button>
+            <a
+              href="https://wa.me/918948557071?text=Hi%20there%2C%20I%20want%20to%20know%20more!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full hover:bg-[#25D366]/10 transition duration-200"
+              aria-label="Chat with us on WhatsApp"
+            >
+              <Lottie animationData={whatsappAnimation} loop autoplay className="w-20 h-20" />
             </a>
+
+
+
+
             <Link to="/contact">
-              <CustomButton type="submit">Contact</CustomButton>
+              <CustomButton type="submit" className='mt-3'>Contact</CustomButton>
             </Link>
           </div>
         </div>
