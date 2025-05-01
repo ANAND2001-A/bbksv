@@ -1,24 +1,21 @@
-// Contact.jsx
-
 import React, { useState } from "react";
 import CustomButton from "../components/CustomButton.jsx";
 import { motion } from "framer-motion";
-import emailjs from 'emailjs-com';
+import emailjs from "emailjs-com";
 
-
-// Animation variants
+// Animation variants (safe for small screens)
 const fadeInLeft = {
-  hidden: { opacity: 0, x: -50 },
+  hidden: { opacity: 0, x: -20 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
 };
 
 const fadeInRight = {
-  hidden: { opacity: 0, x: 50 },
+  hidden: { opacity: 0, x: 20 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.8, delay: 0.2 } },
 };
 
 const fadeInBottom = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.4 } },
 };
 
@@ -47,9 +44,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
     try {
-      // Send email via EmailJS
       const templateParams = {
         fullName: formData.fullName,
         email: formData.email,
@@ -57,17 +52,15 @@ const Contact = () => {
         subject: formData.subject,
         message: formData.message,
       };
-  
+
       await emailjs.send(
-        'service_cvj9gzl',     // Replace with your EmailJS service ID
-        'template_vkaz48m',    // Replace with your EmailJS template ID
+        "service_cvj9gzl",
+        "template_vkaz48m",
         templateParams,
-        'E3GYJD56fPv4ekq0g'      // Replace with your EmailJS public key
+        "E3GYJD56fPv4ekq0g"
       );
-  
+
       alert("Your message has been sent successfully!");
-  
-      // Reset form
       setFormData({
         fullName: "",
         email: "",
@@ -76,17 +69,15 @@ const Contact = () => {
         message: "",
         attachment: null,
       });
-  
     } catch (error) {
       console.error("Error sending message: ", error);
       alert("There was an error sending your message.");
     }
   };
-  
 
   return (
-    <div className="bg-white">
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="bg-white overflow-hidden">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Form Section */}
           <motion.div
@@ -94,7 +85,7 @@ const Contact = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="bg-blue-50 rounded-4xl shadow-sm p-8"
+            className="bg-blue-50 rounded-4xl shadow-sm p-8 overflow-hidden"
           >
             <motion.h2
               variants={textFadeIn}
@@ -108,60 +99,37 @@ const Contact = () => {
             </motion.h2>
 
             <form className="space-y-6" onSubmit={handleSubmit}>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <i className="fas fa-user text-gray-400"></i>
+              {["fullName", "email", "phoneNumber"].map((field, i) => (
+                <div key={field}>
+                  <label className="block text-sm font-medium text-gray-700 mb-1 capitalize">
+                    {field === "fullName" ? "Full Name" : field === "email" ? "Email Address" : "Phone Number"}
+                  </label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <i
+                        className={`fas ${
+                          field === "fullName"
+                            ? "fa-user"
+                            : field === "email"
+                            ? "fa-envelope"
+                            : "fa-phone"
+                        } text-gray-400`}
+                      ></i>
+                    </div>
+                    <input
+                      type={field === "email" ? "email" : field === "phoneNumber" ? "tel" : "text"}
+                      name={field}
+                      value={formData[field]}
+                      onChange={handleInputChange}
+                      required
+                      className="!rounded-button block w-full pl-10 py-3 border border-gray-300 focus:ring-custom focus:border-custom rounded-lg"
+                      placeholder={`Enter your ${field}`}
+                    />
                   </div>
-                  <input
-                    type="text"
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleInputChange}
-                    required
-                    className="!rounded-button block w-full pl-10 py-3 border border-gray-300 focus:ring-custom focus:border-custom rounded-lg"
-                    placeholder="Enter your name"
-                  />
                 </div>
-              </div>
+              ))}
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <i className="fas fa-envelope text-gray-400"></i>
-                  </div>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="!rounded-button block w-full pl-10 py-3 border border-gray-300 focus:ring-custom focus:border-custom rounded-lg"
-                    placeholder="Enter your email"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <i className="fas fa-phone text-gray-400"></i>
-                  </div>
-                  <input
-                    type="tel"
-                    name="phoneNumber"
-                    value={formData.phoneNumber}
-                    onChange={handleInputChange}
-                    required
-                    className="!rounded-button block w-full pl-10 py-3 border border-gray-300 focus:ring-custom focus:border-custom rounded-lg"
-                    placeholder="Enter your phone number"
-                  />
-                </div>
-              </div>
-
+              {/* Subject */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
                 <select
@@ -177,6 +145,7 @@ const Contact = () => {
                 </select>
               </div>
 
+              {/* Message */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
                 <textarea
@@ -194,14 +163,15 @@ const Contact = () => {
             </form>
           </motion.div>
 
-          {/* Contact Info + Map Section */}
-          <div className="space-y-8">
+          {/* Contact Info + Map */}
+          <div className="space-y-8 overflow-hidden">
+            {/* Contact Info */}
             <motion.div
               variants={fadeInBottom}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              className="bg-blue-50 rounded-4xl shadow-sm p-8"
+              className="bg-blue-50 rounded-4xl shadow-sm p-8 overflow-hidden"
             >
               <motion.h3
                 variants={textFadeIn}
@@ -222,9 +192,7 @@ const Contact = () => {
                     rel="noopener noreferrer"
                     className="flex items-start hover:bg-gray-100 p-2 rounded-lg transition"
                   >
-                    <div className="flex-shrink-0">
-                      <i className="fas fa-map-marker-alt text-custom w-5 mt-1"></i>
-                    </div>
+                    <i className="fas fa-map-marker-alt text-custom w-5 mt-1"></i>
                     <div className="ml-3">
                       <p className="text-gray-900">Lahurampur Mahul</p>
                       <p className="text-gray-600">Azamgarh</p>
@@ -255,21 +223,29 @@ const Contact = () => {
 
               <div className="mt-8 ml-10">
                 <div className="flex space-x-4 ml-6">
-                  <a href="#" className="text-gray-400 hover:text-custom"><i className="fab fa-facebook-f text-xl"></i></a>
-                  <a href="#" className="text-gray-400 hover:text-custom"><i className="fab fa-twitter text-xl"></i></a>
-                  <a href="#" className="text-gray-400 hover:text-custom"><i className="fab fa-linkedin-in text-xl"></i></a>
-                  <a href="#" className="text-gray-400 hover:text-custom"><i className="fab fa-instagram text-xl"></i></a>
-                  
+                  <a href="#" className="text-gray-400 hover:text-custom">
+                    <i className="fab fa-facebook-f text-xl"></i>
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-custom">
+                    <i className="fab fa-twitter text-xl"></i>
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-custom">
+                    <i className="fab fa-linkedin-in text-xl"></i>
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-custom">
+                    <i className="fab fa-instagram text-xl"></i>
+                  </a>
                 </div>
               </div>
             </motion.div>
 
+            {/* Google Map */}
             <motion.div
               variants={fadeInRight}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              className="bg-blue-50 rounded-4xl shadow-sm p-8"
+              className="bg-blue-50 rounded-4xl shadow-sm p-8 overflow-hidden"
             >
               <motion.h3
                 variants={textFadeIn}
@@ -295,7 +271,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      
     </div>
   );
 };

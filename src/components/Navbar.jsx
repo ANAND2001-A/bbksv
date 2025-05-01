@@ -138,7 +138,7 @@ export default function Navbar({ children }) {
       </nav>
 
       {/* Mobile Top Nav */}
-      <div className="bg-white shadow-sm px-4 py-3 flex items-center justify-between lg:hidden fixed top-0 left-0 right-0 z-50">
+      <div className="bg-white shadow-sm px-4 py-2 flex items-center justify-between lg:hidden fixed top-0 left-0 right-0 z-50">
         <div className="flex items-center gap-2">
           <img className="w-10 h-10 object-cover rounded-full" src={logo} alt="logo" />
           <span className="text-base font-semibold text-[#005B96]">BBKSV</span>

@@ -1,125 +1,133 @@
-import { FaFacebook, FaYoutube, FaInstagram, FaWhatsapp, FaSchool, FaPhone, FaMailBulk } from 'react-icons/fa';
+import {
+  FaFacebook,
+  FaYoutube,
+  FaInstagram,
+  FaWhatsapp,
+  FaSchool,
+  FaPhone,
+  FaMailBulk,
+} from 'react-icons/fa';
 import logo from "../assets/logos/bbksv.png";
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const underlineAnimation = "relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#005B96] hover:after:w-full after:transition-all after:duration-300 after:rounded";
+
 export default function Footer() {
   return (
-    <footer className="bg-blue-50 text-gray-700 px-8 py-12 rounded-xl shadow-md mx-4">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-blue-50 text-gray-700 sm:text-center px-6 py-12 rounded-xl shadow-md  mx-30 my-4 max-w-screen-2xl ">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
         {/* Column 1 */}
-        <div>
-
-          <div className="flex items-center gap-2">
+        <div className="flex flex-col items-center md:items-start">
+          <div className="flex items-center justify-center md:justify-start gap-2">
             <Link to="/">
-              <img className="w-15 h-15 object-cover rounded-fulls" src={logo} alt="logo.jpg" />
+              <img
+                className="w-16 h-16 object-cover rounded-full"
+                src={logo}
+                alt="logo"
+              />
             </Link>
-            <div className="flex items-center gap-2">
-              {/* Text clickable to open Google Maps in a new tab */}
-              <a
-                href="https://www.google.com/maps/place/Baba+Bk+School/@26.1504936,82.7959568,17z/data=!3m1!4b1!4m6!3m5!1s0x3990570051e6b28b:0x4405712d68fd4e2b!8m2!3d26.1504936!4d82.7985317!16s%2Fg%2F11w1qxh_1v?entry=ttu&g_ep=EgoyMDI1MDQyMC4wIKXMDSoASAFQAw%3D%3D"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-2xl font-bold text-[#005B96] hover:underline"
-              >
-                बाबा बी.के. स्मारक विद्यालय
-              </a>
-            </div>
+            <a
+              href="https://www.google.com/maps/place/Baba+Bk+School/@26.1504936,82.7959568,17z"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-xl font-bold text-[#005B96] ${underlineAnimation}`}
+            >
+              बाबा बी.के. स्मारक विद्यालय
+            </a>
           </div>
-          <p className="mb-4 mt-3 font-semibold">Get In Touch</p>
+
+          <p className="mb-4 mt-4 font-semibold">Get In Touch</p>
           <ul className="space-y-2">
-            <li className="flex items-center gap-2">
-              <span className="text-lg"><FaSchool /></span>
-              {/* Clickable Text for Google Maps all of thid  */}
+            <li className="flex justify-center md:justify-start items-center gap-2">
+              <FaSchool />
               <a
-                href="https://www.google.com/maps/place/Baba+Bk+School/@26.1504936,82.7959568,17z/data=!3m1!4b1!4m6!3m5!1s0x3990570051e6b28b:0x4405712d68fd4e2b!8m2!3d26.1504936!4d82.7985317!16s%2Fg%2F11w1qxh_1v?entry=ttu&g_ep=EgoyMDI1MDQyMC4wIKXMDSoASAFQAw%3D%3D"
-                
+                href="https://www.google.com/maps/place/Baba+Bk+School"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lg text-[#005B96] hover:underline"
+                className={`text-lg text-[#005B96] ${underlineAnimation}`}
               >
                 बाबा बी.के. स्मारक विद्यालय
               </a>
             </li>
-            <li className="flex items-center gap-2">
+            <li className="flex justify-center md:justify-start items-center gap-2">
               <a
                 href="tel:+919918341985"
-                className="text-lg flex items-center gap-2 text-inherit hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
+                className={`text-lg flex items-center gap-2 ${underlineAnimation}`}
               >
                 <FaPhone />
                 <span>9918341985</span>
               </a>
             </li>
-
-            <li className="flex items-center gap-2">
+            <li className="flex justify-center md:justify-start items-center gap-2">
               <a
                 href="mailto:yourbbksv@gmail.com"
-                className="text-lg flex items-center gap-2 text-inherit hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
+                className={`text-lg flex items-center gap-2 ${underlineAnimation}`}
               >
                 <FaMailBulk />
                 <span>yourbbksv@gmail.com</span>
               </a>
             </li>
-
           </ul>
         </div>
 
         {/* Column 2 */}
-        <div className="mr-10">
+        <div className="flex flex-col items-center md:items-start">
           <h3 className="text-lg font-semibold mb-4">For Us</h3>
           <ul className="space-y-2">
-            <li><Link to="/" className="hover:text-[#005B96]">Home</Link></li>
-            <li><Link to="/about" className="hover:text-[#005B96]">About</Link></li>
-            <li><Link to="/carear" className="hover:text-[#005B96]">Carear</Link></li>
-            <li><Link to="/contact" className="hover:text-[#005B96]">Contact Us</Link></li>
+            <li><Link to="/" className={underlineAnimation}>Home</Link></li>
+            <li><Link to="/about" className={underlineAnimation}>About</Link></li>
+            <li><Link to="/carear" className={underlineAnimation}>Career</Link></li>
+            <li><Link to="/contact" className={underlineAnimation}>Contact Us</Link></li>
           </ul>
         </div>
 
         {/* Column 3 */}
-        <div>
+        <div className="flex flex-col items-center md:items-start">
           <h3 className="text-lg font-semibold mb-4">Courses</h3>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-[#005B96]">Physics</a></li>
-            <li><a href="#" className="hover:text-[#005B96]">Chemistry</a></li>
-            <li><a href="#" className="hover:text-[#005B96]">Mathematics</a></li>
-            <li><a href="#" className="hover:text-[#005B96]">Biology</a></li>
-            <li><a href="#" className="hover:text-[#005B96]">History</a></li>
+            <li><a href="#" className={underlineAnimation}>Physics</a></li>
+            <li><a href="#" className={underlineAnimation}>Chemistry</a></li>
+            <li><a href="#" className={underlineAnimation}>Mathematics</a></li>
+            <li><a href="#" className={underlineAnimation}>Biology</a></li>
+            <li><a href="#" className={underlineAnimation}>History</a></li>
           </ul>
         </div>
 
         {/* Column 4 */}
-        <div>
+        <div className="flex flex-col items-center md:items-start">
           <h3 className="text-lg font-semibold mb-4">Resources</h3>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-[#005B96]">Freebies</a></li>
-            <li><a href="#" className="hover:text-[#005B96]">Documentation</a></li>
-            <li><a href="#" className="hover:text-[#005B96]">Read our Blog</a></li>
-            <li><a href="#" className="hover:text-[#005B96]">Our Newsletter</a></li>
-            <li><a href="#" className="hover:text-[#005B96]">Free Inquiry Guides</a></li>
+            <li><a href="#" className={underlineAnimation}>Freebies</a></li>
+            <li><a href="#" className={underlineAnimation}>Documentation</a></li>
+            <li><a href="#" className={underlineAnimation}>Read our Blog</a></li>
+            <li><a href="#" className={underlineAnimation}>Our Newsletter</a></li>
+            <li><a href="#" className={underlineAnimation}>Free Inquiry Guides</a></li>
           </ul>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="mt-10 bg-blue-50 py-1 px-3 rounded-full flex flex-col md:flex-row items-center justify-between">
-        <p className="text-sm">Copyright © 2025 Difmo</p>
-        <div className="flex items-center gap-3 mt-2 md:mt-0">
+      <div className="mt-10 bg-blue-50 py-2 px-4 rounded-full flex flex-col md:flex-row items-center md:justify-between text-center">
+        <p className="text-sm">© 2025 Difmo. All rights reserved.</p>
+        <div className="flex items-center justify-center gap-4 mt-3 md:mt-0">
           <a
             href="https://wa.me/918948557071?text=Hi%20there%2C%20I%20want%20to%20know%20more!"
             target="_blank"
             rel="noopener noreferrer"
+            className="border border-[#005B96] rounded-full p-1"
           >
-            <button className="border border-[#005B96] rounded-full p-1">
-              <FaWhatsapp className="text-[#005B96]" />
-            </button>
+            <FaWhatsapp className="text-[#005B96]" />
           </a>
-          <a href="https://www.facebook.com/share/1BH3JosKM5/" aria-label="Facebook" className="text-[#005B96] text-lg"><FaFacebook /></a>
-          <a href="https://www.youtube.com/@BabaBkSchool" aria-label="YouTube" className="text-[#005B96] text-lg"><FaYoutube /></a>
-          <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=p834aks" aria-label="Instagram" className="text-[#005B96] text-lg"><FaInstagram /></a>
+          <a href="https://www.facebook.com/share/1BH3JosKM5/" className="text-[#005B96] text-lg" aria-label="Facebook">
+            <FaFacebook />
+          </a>
+          <a href="https://www.youtube.com/@BabaBkSchool" className="text-[#005B96] text-lg" aria-label="YouTube">
+            <FaYoutube />
+          </a>
+          <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=p834aks" className="text-[#005B96] text-lg" aria-label="Instagram">
+            <FaInstagram />
+          </a>
         </div>
       </div>
     </footer>
