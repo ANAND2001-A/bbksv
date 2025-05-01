@@ -145,11 +145,15 @@ export default function Navbar({ children }) {
         </div>
 
         <div className="flex items-center gap-3">
-          <a href="https://wa.me/918948557071?text=Hi%20there%2C%20I%20want%20to%20know%20more!" target="_blank" rel="noopener noreferrer">
-            <button className="border border-[#005B96] rounded-full p-2">
-              <FaWhatsapp className="text-[#005B96]" />
-            </button>
-          </a>
+        <a
+              href="https://wa.me/918948557071?text=Hi%20there%2C%20I%20want%20to%20know%20more!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full hover:bg-[#25D366]/10 transition duration-200"
+              aria-label="Chat with us on WhatsApp"
+            >
+              <Lottie animationData={whatsappAnimation} loop autoplay className="w-20 h-20" />
+            </a>
           <Link to="/contact">
             <CustomButton type="submit">Contact</CustomButton>
           </Link>
