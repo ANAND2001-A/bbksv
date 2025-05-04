@@ -97,6 +97,7 @@ const Contact = () => {
             >
               Get in Touch
             </motion.h2>
+            
 
             <form className="space-y-6" onSubmit={handleSubmit}>
               {["fullName", "email", "phoneNumber"].map((field, i) => (

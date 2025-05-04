@@ -146,6 +146,11 @@ const GallarySection = () => {
   return (
     <div className="bg-blue-50 min-h-screen py-12 px-4 container mx-auto">
       <h1 className="text-4xl font-bold text-blue-900 mb-2">Campus Gallery</h1>
+      <div className="w-full flex justify-start mb-6">
+        <svg className="w-32 h-6 text-red-500" viewBox="0 0 100 20" preserveAspectRatio="none">
+          <path d="M0,10 C25,20 75,0 100,10" fill="none" stroke="currentColor" stroke-width="2" />
+        </svg>
+      </div>
       <p className="text-gray-600 mb-6 max-w-2xl">
         Explore our campus through photographs showcasing student life,
         facilities, and more.
@@ -204,7 +209,7 @@ const GallarySection = () => {
             <div
               key={img.id}
               data-aos="zoom-in"
-              className="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-transform hover:scale-105 transform hover:-translate-y-2"
+              className="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105  hover:-translate-y-2"
             >
               <img
                 src={img.imageUrl}

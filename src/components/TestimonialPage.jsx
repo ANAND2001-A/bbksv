@@ -57,6 +57,11 @@ const TestimonialPage = () => {
     <section className="max-w-6xl mx-auto px-4 md:px-8 py-12">
       <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center">
         What Our Students Say
+        <div className="w-full flex justify-center mb-6">
+          <svg className="w-32 h-6 text-red-500" viewBox="0 0 100 20" preserveAspectRatio="none">
+            <path d="M0,10 C25,20 75,0 100,10" fill="none" stroke="currentColor" stroke-width="2" />
+          </svg>
+        </div>
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

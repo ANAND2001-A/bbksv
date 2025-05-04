@@ -15,14 +15,14 @@ const underlineAnimation = "relative after:absolute after:bottom-0 after:left-0 
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-50 text-gray-700 sm:text-center px-6 py-12 rounded-xl shadow-md  mx-30 my-4 max-w-screen-2xl ">
+    <footer className="bg-blue-50 text-gray-700 sm:text-center px-6 py-12 rounded-xl shadow-md  mx-4 sm:mx-30 my-4 max-w-screen-2xl ">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
         {/* Column 1 */}
         <div className="flex flex-col items-center md:items-start">
           <div className="flex items-center justify-center md:justify-start gap-2">
             <Link to="/">
               <img
-                className="w-16 h-16 object-cover rounded-full"
+                className="w-15 h-15 object-cover rounded-full "
                 src={logo}
                 alt="logo"
               />
@@ -86,11 +86,11 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start">
           <h3 className="text-lg font-semibold mb-4">Courses</h3>
           <ul className="space-y-2">
-            <li><a href="#" className={underlineAnimation}>Physics</a></li>
-            <li><a href="#" className={underlineAnimation}>Chemistry</a></li>
-            <li><a href="#" className={underlineAnimation}>Mathematics</a></li>
-            <li><a href="#" className={underlineAnimation}>Biology</a></li>
-            <li><a href="#" className={underlineAnimation}>History</a></li>
+            <li><a href="/courses" className={underlineAnimation}>Physics</a></li>
+            <li><a href="/courses" className={underlineAnimation}>Chemistry</a></li>
+            <li><a href="/courses" className={underlineAnimation}>Mathematics</a></li>
+            <li><a href="/courses" className={underlineAnimation}>Biology</a></li>
+            <li><a href="/courses" className={underlineAnimation}>History</a></li>
           </ul>
         </div>
 
@@ -109,7 +109,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="mt-10 bg-blue-50 py-2 px-4 rounded-full flex flex-col md:flex-row items-center md:justify-between text-center">
-        <p className="text-sm">© 2025 Difmo. All rights reserved.</p>
+        <p className="text-sm">© 2025 BBKSV. All rights reserved.</p>
         <div className="flex items-center justify-center gap-4 mt-3 md:mt-0">
           <a
             href="https://wa.me/918948557071?text=Hi%20there%2C%20I%20want%20to%20know%20more!"

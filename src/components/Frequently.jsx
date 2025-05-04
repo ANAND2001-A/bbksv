@@ -66,7 +66,11 @@ const Frequently = () => {
 
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-10">
-      <h2 className="text-3xl font-bold mb-2">अक्सर पूछे जाने वाले प्रश्न</h2>
+      <h2 className="text-3xl font-bold mb-2">अक्सर पूछे जाने वाले प्रश्न <div className="w-full flex justify-start mb-6">
+        <svg className="w-32 h-6 text-red-500" viewBox="0 0 100 20" preserveAspectRatio="none">
+          <path d="M0,10 C25,20 75,0 100,10" fill="none" stroke="currentColor" stroke-width="2" />
+        </svg>
+      </div></h2>
       <p className="text-gray-600 mb-6">
         बाबा बी.के स्कूल से जुड़े सामान्य प्रश्नों के उत्तर।
       </p>
@@ -76,11 +80,10 @@ const Frequently = () => {
         {Object.keys(faqData).map((tab) => (
           <button
             key={tab}
-            className={`px-4 py-2 rounded-full border ${
-              selectedTab === tab
+            className={`px-4 py-2 rounded-full border ${selectedTab === tab
                 ? "bg-black text-white"
                 : "bg-white text-black"
-            }`}
+              }`}
             onClick={() => {
               setSelectedTab(tab);
               setOpenIndex(null);
@@ -106,9 +109,8 @@ const Frequently = () => {
                 <span className="text-xl font-bold">{isOpen ? "-" : "+"}</span>
               </div>
               <div
-                className={`overflow-hidden transition-all duration-500 transform ${
-                  isOpen ? "translate-x-0 opacity-100 max-h-[1000px]" : "-translate-x-full opacity-0 max-h-0"
-                }`}
+                className={`overflow-hidden transition-all duration-500 transform ${isOpen ? "translate-x-0 opacity-100 max-h-[1000px]" : "-translate-x-full opacity-0 max-h-0"
+                  }`}
               >
                 <p className="text-gray-700 mt-2">{item.answer}</p>
               </div>

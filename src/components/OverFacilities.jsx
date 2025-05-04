@@ -66,7 +66,13 @@ const OverFacilities = () => {
     <div className="px-6 py-12 text-center bg-white">
       <h2 className="text-3xl font-semibold mb-12">
         Over Facilities
+        <div className="w-full flex justify-center mb-6">
+          <svg className="w-32 h-6 text-red-500" viewBox="0 0 100 20" preserveAspectRatio="none">
+            <path d="M0,10 C25,20 75,0 100,10" fill="none" stroke="currentColor" stroke-width="2" />
+          </svg>
+        </div>
       </h2>
+
 
       <div className="grid md:grid-cols-3 gap-6 bg-white p-6 rounded-3xl max-w-6xl mx-auto">
         {features.map((feature, index) => (
