@@ -183,6 +183,34 @@ export default function Navbar({ children }) {
           >
             <Lottie animationData={whatsappAnimation} loop autoplay className="w-20 h-20" />
           </a>
+
+
+        
+          {user ? (
+              // User is logged in, show logout and dashboard
+              <>
+                <Link to="/dashboard">
+                  <CustomButton>Dashboard</CustomButton>
+                </Link>
+                <button onClick={handleLogout} className="text-4xl text-[#005B96] hover:text-blue-500 transition duration-200">
+                  Logout
+                </button>
+              </>
+            ) : (
+              // User is not logged in, show login and signup
+              <>
+                <Link to="/login">
+                <img className="h-6 w-6 transition duration-200" src={img} alt="Login" />
+             </Link>
+                {/* <Link to="/signup">
+                  <FaPersonBooth className="text-4xl text-[#005B96] hover:text-blue-500 transition duration-200" />
+                </Link> */}
+              </>
+            )}
+
+
+
+
           <Link to="/contact">
             <CustomButton type="submit">Contact</CustomButton>
           </Link>

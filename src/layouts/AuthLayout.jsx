@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import useAuthStore from '../store/authStore';  // Zustand store
+import React from 'react';
 
 export default function AuthLayout() {
   const user = useAuthStore((state) => state.user);
