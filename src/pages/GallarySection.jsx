@@ -148,9 +148,10 @@ const GallarySection = () => {
       <h1 className="text-4xl font-bold text-blue-900 mb-2">Campus Gallery</h1>
       <div className="w-full flex justify-start mb-6">
         <svg className="w-32 h-6 text-red-500" viewBox="0 0 100 20" preserveAspectRatio="none">
-          <path d="M0,10 C25,20 75,0 100,10" fill="none" stroke="currentColor" stroke-width="2" />
+          <path d="M0,10 C30,20 70,0 100,10" fill="none" stroke="currentColor" strokeWidth="1.5" />
         </svg>
       </div>
+
       <p className="text-gray-600 mb-6 max-w-2xl">
         Explore our campus through photographs showcasing student life,
         facilities, and more.
@@ -203,50 +204,52 @@ const GallarySection = () => {
       </div>
 
       {/* Gallery View */}
-      {viewMode === "grid" ? (
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {currentImages.map((img, index) => (
-            <div
-              key={img.id}
-              data-aos="zoom-in"
-              className="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105  hover:-translate-y-2"
-            >
-              <img
-                src={img.imageUrl}
-                alt={img.title}
-                className="w-full h-48 object-cover cursor-pointer"
-                onClick={() => openLightbox(index)}
-              />
-              <div className="p-4">
-                <h3 className="text-lg font-bold text-blue-900">{img.title}</h3>
-                <p className="text-sm text-gray-600">{img.date}</p>
+      <div key={viewMode}> {/* Adding key here to trigger re-render when viewMode changes */}
+        {viewMode === "grid" ? (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {currentImages.map((img, index) => (
+              <div
+                key={img.id}
+                data-aos="zoom-in"
+                className="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105  hover:-translate-y-2"
+              >
+                <img
+                  src={img.imageUrl}
+                  alt={img.title}
+                  className="w-full h-48 object-cover cursor-pointer"
+                  onClick={() => openLightbox(index)}
+                />
+                <div className="p-4">
+                  <h3 className="text-lg font-bold text-blue-900">{img.title}</h3>
+                  <p className="text-sm text-gray-600">{img.date}</p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div className="space-y-6">
-          {currentImages.map((img, index) => (
-            <div
-              key={img.id}
-              data-aos="fade-up"
-              className="flex flex-col md:flex-row bg-white rounded-lg shadow overflow-hidden transition transform hover:scale-105 hover:-translate-y-2"
-            >
-              <img
-                src={img.imageUrl}
-                alt={img.title}
-                className="w-full md:w-1/3 h-56 object-cover cursor-pointer"
-                onClick={() => openLightbox(index)}
-              />
-              <div className="p-6 flex-1">
-                <h3 className="text-2xl font-bold text-blue-900">{img.title}</h3>
-                <p className="text-sm text-gray-600 mb-2">{img.date}</p>
-                <p className="text-gray-700 mb-4">{img.description}</p>
+            ))}
+          </div>
+        ) : (
+          <div className="space-y-6">
+            {currentImages.map((img, index) => (
+              <div
+                key={img.id}
+                data-aos="fade-up"
+                className="flex flex-col md:flex-row bg-white rounded-lg shadow overflow-hidden transition transform hover:scale-105 hover:-translate-y-2"
+              >
+                <img
+                  src={img.imageUrl}
+                  alt={img.title}
+                  className="w-full md:w-1/3 h-56 object-cover cursor-pointer"
+                  onClick={() => openLightbox(index)}
+                />
+                <div className="p-6 flex-1">
+                  <h3 className="text-2xl font-bold text-blue-900">{img.title}</h3>
+                  <p className="text-sm text-gray-600 mb-2">{img.date}</p>
+                  <p className="text-gray-700 mb-4">{img.description}</p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      )}
+            ))}
+          </div>
+        )}
+      </div>
 
       {/* Show More */}
       {currentPage * itemsPerPage < sortedImages.length && (
