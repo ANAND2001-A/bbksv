@@ -4,9 +4,10 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
-  GoogleAuthProvider,
-  FacebookAuthProvider,
   signInWithPopup,
+  sendEmailVerification,
+  sendPasswordResetEmail,
+  GoogleAuthProvider,
 } from "firebase/auth";
 import {
   getFirestore,
@@ -17,13 +18,13 @@ import {
 
 // ✅ Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyDbYfGy0fM0eWDdl5ovbQAlpv44Dcmr-to",
+  apiKey: "AIzaSyBsAbnF0vkrWDXMPl29wsZ28nKvisMpU2g",
   authDomain: "my-portfolio-402a5.firebaseapp.com",
   databaseURL: "https://my-portfolio-402a5-default-rtdb.firebaseio.com",
   projectId: "my-portfolio-402a5",
   storageBucket: "my-portfolio-402a5.appspot.com",
   messagingSenderId: "964260655775",
-  appId: "1:964260655775:web:b26c0f87da67209139a8aa",
+  appId: "1:964260655775:web:a83e3f2124789cde39a8aa"
 };
 
 // ✅ Initialize Firebase
@@ -33,12 +34,11 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// ✅ Providers
+// ✅ Google Provider
 const googleProvider = new GoogleAuthProvider();
-const facebookProvider = new FacebookAuthProvider();
 
-// ✅ Export services and providers
-export { auth, db, googleProvider, facebookProvider };
+// ✅ Export auth, db, provider
+export { auth, db, googleProvider };
 
 // ✅ Save contact form
 export const saveContactForm = async (formData) => {
@@ -57,51 +57,31 @@ export const saveContactForm = async (formData) => {
   }
 };
 
-// ✅ Register a user
+// ✅ Register user
 export const registerUser = async (email, password) => {
-  try {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    return userCredential.user;
-  } catch (error) {
-    throw error;
-  }
+  const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+  await sendEmailVerification(userCredential.user);
+  return userCredential.user;
 };
 
-// ✅ Login a user
+// ✅ Login user
 export const loginUser = async (email, password) => {
-  try {
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    return userCredential.user;
-  } catch (error) {
-    throw error;
-  }
+  const userCredential = await signInWithEmailAndPassword(auth, email, password);
+  return userCredential.user;
 };
 
-// ✅ Logout a user
+// ✅ Logout user
 export const logoutUser = async () => {
-  try {
-    await signOut(auth);
-  } catch (error) {
-    throw error;
-  }
+  await signOut(auth);
 };
 
 // ✅ Google Sign-In
 export const signInWithGoogle = async () => {
-  try {
-    const result = await signInWithPopup(auth, googleProvider);
-    return result.user;
-  } catch (error) {
-    throw error;
-  }
+  const result = await signInWithPopup(auth, googleProvider);
+  return result.user;
 };
 
-// ✅ Facebook Sign-In
-export const signInWithFacebook = async () => {
-  try {
-    const result = await signInWithPopup(auth, facebookProvider);
-    return result.user;
-  } catch (error) {
-    throw error;
-  }
+// ✅ Reset password
+export const resetPassword = async (email) => {
+  await sendPasswordResetEmail(auth, email);
 };

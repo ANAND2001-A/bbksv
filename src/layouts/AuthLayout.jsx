@@ -1,18 +1,34 @@
-import { Outlet } from 'react-router-dom';
-import useAuthStore from '../store/authStore';  // Zustand store
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../firebase';
+import useAuthStore from '../store/useAuthStore';
+import Navbar from '../components/Navbar';
 
-export default function AuthLayout() {
-  const user = useAuthStore((state) => state.user);
+export default function AuthLayout({ children }) {
+  const setUser = useAuthStore((state) => state.setUser);
+  const [loading, setLoading] = useState(true);
 
-  // Redirect if user is logged in
-  if (user) {
-    return <Navigate to="/" replace />;
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      setUser(firebaseUser || null);
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, [setUser]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen text-xl font-semibold text-blue-500">
+        Loading...
+      </div>
+    );
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <Outlet />
-    </div>
+    <>
+      {/* <Navbar /> */}
+      <main>{children}</main>
+    </>
   );
 }
