@@ -156,7 +156,7 @@ export default function Navbar({ children }) {
           </a>
 
           {user ? (
-            <img src={img} onClick={handleLogout}></img>
+            <img src={img} className='h-6 w-6' onClick={handleLogout}></img>
 
           ) : (
             <>

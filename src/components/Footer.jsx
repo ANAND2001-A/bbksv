@@ -1,3 +1,4 @@
+import React, { useState, useRef } from "react";
 import {
   FaFacebook,
   FaYoutube,
@@ -6,23 +7,37 @@ import {
   FaSchool,
   FaPhone,
   FaMailBulk,
-} from 'react-icons/fa';
+} from "react-icons/fa";
+import { Link } from "react-router-dom";
+import Lottie from "lottie-react";
 import logo from "../assets/logos/bbksv.png";
-import React from 'react';
-import { Link } from 'react-router-dom';
+import bbksvFooterAnimation from "../assets/images/windfan.json";
 
-const underlineAnimation = "relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#005B96] hover:after:w-full after:transition-all after:duration-300 after:rounded";
+const underlineAnimation =
+  "relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#005B96] hover:after:w-full after:transition-all after:duration-300 after:rounded";
 
 export default function Footer() {
+  const lottieRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  const handleTogglePlay = () => {
+    if (!lottieRef.current) return;
+    if (isPlaying) {
+      lottieRef.current.pause();
+    } else {
+      lottieRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
   return (
-    <footer className="bg-blue-50 text-gray-700 sm:text-center px-6 py-12 rounded-xl shadow-md  mx-4 sm:mx-30 my-4 max-w-screen-2xl ">
+    <footer className="relative bg-blue-50 text-gray-700 sm:text-center px-6 py-12 rounded-xl shadow-md mx-4 sm:mx-30 my-4 max-w-screen-2xl overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
         {/* Column 1 */}
         <div className="flex flex-col items-center md:items-start">
           <div className="flex items-center justify-center md:justify-start gap-2">
             <Link to="/">
               <img
-                className="w-15 h-15 object-cover rounded-full "
+                className="w-15 h-15 object-cover rounded-full"
                 src={logo}
                 alt="logo"
               />
@@ -75,10 +90,26 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start">
           <h3 className="text-lg font-semibold mb-4">For Us</h3>
           <ul className="space-y-2">
-            <li><Link to="/" className={underlineAnimation}>Home</Link></li>
-            <li><Link to="/about" className={underlineAnimation}>About</Link></li>
-            <li><Link to="/carear" className={underlineAnimation}>Career</Link></li>
-            <li><Link to="/contact" className={underlineAnimation}>Contact Us</Link></li>
+            <li>
+              <Link to="/" className={underlineAnimation}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className={underlineAnimation}>
+                About
+              </Link>
+            </li>
+            <li>
+              <Link to="/carear" className={underlineAnimation}>
+                Career
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className={underlineAnimation}>
+                Contact Us
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -86,11 +117,31 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start">
           <h3 className="text-lg font-semibold mb-4">Courses</h3>
           <ul className="space-y-2">
-            <li><a href="/courses" className={underlineAnimation}>Physics</a></li>
-            <li><a href="/courses" className={underlineAnimation}>Chemistry</a></li>
-            <li><a href="/courses" className={underlineAnimation}>Mathematics</a></li>
-            <li><a href="/courses" className={underlineAnimation}>Biology</a></li>
-            <li><a href="/courses" className={underlineAnimation}>History</a></li>
+            <li>
+              <a href="/courses" className={underlineAnimation}>
+                Physics
+              </a>
+            </li>
+            <li>
+              <a href="/courses" className={underlineAnimation}>
+                Chemistry
+              </a>
+            </li>
+            <li>
+              <a href="/courses" className={underlineAnimation}>
+                Mathematics
+              </a>
+            </li>
+            <li>
+              <a href="/courses" className={underlineAnimation}>
+                Biology
+              </a>
+            </li>
+            <li>
+              <a href="/courses" className={underlineAnimation}>
+                History
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -98,17 +149,37 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start">
           <h3 className="text-lg font-semibold mb-4">Resources</h3>
           <ul className="space-y-2">
-            <li><a href="#" className={underlineAnimation}>Freebies</a></li>
-            <li><a href="#" className={underlineAnimation}>Documentation</a></li>
-            <li><a href="#" className={underlineAnimation}>Read our Blog</a></li>
-            <li><a href="#" className={underlineAnimation}>Our Newsletter</a></li>
-            <li><a href="#" className={underlineAnimation}>Free Inquiry Guides</a></li>
+            <li>
+              <a href="#" className={underlineAnimation}>
+                Freebies
+              </a>
+            </li>
+            <li>
+              <a href="#" className={underlineAnimation}>
+                Documentation
+              </a>
+            </li>
+            <li>
+              <a href="#" className={underlineAnimation}>
+                Read our Blog
+              </a>
+            </li>
+            <li>
+              <a href="#" className={underlineAnimation}>
+                Our Newsletter
+              </a>
+            </li>
+            <li>
+              <a href="#" className={underlineAnimation}>
+                Free Inquiry Guides
+              </a>
+            </li>
           </ul>
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="mt-10 bg-blue-50 py-2 px-4 rounded-full flex flex-col md:flex-row items-center md:justify-between text-center">
+      {/* Bottom Bar with reduced top margin */}
+      <div className="mt-2 bg-blue-50 py-2 px-4 rounded-full flex flex-col md:flex-row items-center md:justify-between text-center relative z-10">
         <p className="text-sm">© 2025 BBKSV. All rights reserved.</p>
         <div className="flex items-center justify-center gap-4 mt-3 md:mt-0">
           <a
@@ -119,17 +190,46 @@ export default function Footer() {
           >
             <FaWhatsapp className="text-[#005B96]" />
           </a>
-          <a href="https://www.facebook.com/share/1BH3JosKM5/" className="text-[#005B96] text-lg" aria-label="Facebook">
+          <a
+            href="https://www.facebook.com/share/1BH3JosKM5/"
+            className="text-[#005B96] text-lg"
+            aria-label="Facebook"
+          >
             <FaFacebook />
           </a>
-          <a href="https://www.youtube.com/@BabaBkSchool" className="text-[#005B96] text-lg" aria-label="YouTube">
+          <a
+            href="https://www.youtube.com/@BabaBkSchool"
+            className="text-[#005B96] text-lg"
+            aria-label="YouTube"
+          >
             <FaYoutube />
           </a>
-          <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=p834aks" className="text-[#005B96] text-lg" aria-label="Instagram">
+          <a
+            href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=p834aks"
+            className="text-[#005B96] text-lg"
+            aria-label="Instagram"
+          >
             <FaInstagram />
           </a>
         </div>
       </div>
+
+      
+       {/* Lottie Animation with pause/play on click */}
+       <div
+        className="absolute top-4 right-4 w-40 h-40 pointer-events-auto hidden sm:block z-0 cursor-pointer"
+        onClick={handleTogglePlay}
+        title={isPlaying ? "Click to pause animation" : "Click to play animation"}
+      >
+        <Lottie
+          lottieRef={lottieRef}
+          animationData={bbksvFooterAnimation}
+          loop={true}
+          autoplay={true}
+        />
+      </div>
+      
+
     </footer>
   );
 }
