@@ -55,7 +55,7 @@ export default function Navbar({ children }) {
   return (
     <>
       {/* Desktop Navbar */}
-      <nav className="bg-white px-4 py-3 shadow-sm hidden lg:block">
+      {/* <nav className="bg-white px-4 py-3 shadow-sm hidden lg:block"> */}
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
           <Link to="/">
@@ -135,7 +135,7 @@ export default function Navbar({ children }) {
             </Link>
           </div>
         </div>
-      </nav>
+      {/* </nav> */}
 
       {/* Mobile Top Nav */}
       <div className="bg-white shadow-sm px-4 py-2 flex items-center justify-between lg:hidden fixed top-0 left-0 right-0 z-50">
