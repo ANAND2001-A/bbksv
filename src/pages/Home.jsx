@@ -1,86 +1,50 @@
-import React from "react";
-import { Slide } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css';
+import React from 'react';
+import studentImg from '../assets/logos/home_img/homeimg.svg'; // Replace with actual walking boy image
 import { motion } from 'framer-motion';
-
-// Import your images
-import banner1 from '../assets/logos/home_img/kids.jpg';
-import banner2 from '../assets/logos/home_img/kids.jpg';
-import banner3 from '../assets/logos/home_img/kids.jpg';
-
-const slideImages = [
-  {
-    url: banner1,
-    caption: "Slide 1: Patna"
-  },
-  {
-    url: banner2,
-    caption: "Slide 2: Prayagraj"
-  },
-  {
-    url: banner3,
-    caption: "Slide 3: Guwahati"
-  },
-];
+import { FaPlay } from 'react-icons/fa';
 
 const Home = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="slide-container"
-      style={{ margin: '0 auto', maxWidth: '1360px' }}
-    >
-      <Slide
-        indicators
-        arrows
-        duration={3000} // auto slide every 3 seconds
-        transitionDuration={800} // transition effect duration
-        easing="ease"
+    <div className="max-w-[1360px] mx-auto px-6 py-12 grid md:grid-cols-2 items-center gap-6">
+      {/* Left Section */}
+      <motion.div
+        initial={{ opacity: 0, x: -40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
       >
-        {slideImages.map((slide, index) => (
-          <div key={index}>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              style={{
-                backgroundImage: `url(${slide.url})`,
-                height: '402px',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                position: 'relative',
-              }}
-            >
-              {/* Bouncy animated caption */}
-              <motion.div
-                initial={{ y: 100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 500,
-                  damping: 30,
-                  delay: 0.3,
-                }}
-                style={{
-                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                  color: '#fff',
-                  padding: '20px',
-                  textAlign: 'center',
-                  fontSize: '1.5rem',
-                  position: 'absolute',
-                  bottom: '0',
-                  width: '100%',
-                }}
-              >
-                {slide.caption}
-              </motion.div>
-            </motion.div>
-          </div>
-        ))}
-      </Slide>
-    </motion.div>
+        <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-gray-900 mb-6">
+          Education for <br /> a Better Tomorrow
+        </h1>
+
+        <p className="text-lg text-gray-600 mb-8">
+          "Organize Smarter, Learn Better — Simplify Everyday Tasks with the Taskio Dashboard at <span className="text-[#54BD95] font-medium">बाबा बी.के. स्मारक विद्यालय</span>"
+        </p>
+
+        <div className="flex items-center gap-4">
+          <button className="bg-[#54BD95] hover:bg-green-600 text-white px-6 py-3 rounded-full font-medium transition">
+            Enroll Now
+          </button>
+          <button className="flex items-center gap-2 border border-gray-300 px-5 py-3 rounded-full text-gray-700 hover:bg-gray-100 transition">
+            <FaPlay size={14} />
+            View Videos
+          </button>
+        </div>
+      </motion.div>
+
+      {/* Right Section */}
+      <motion.div
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        className="relative"
+      >
+        <img
+          src={studentImg}
+          alt="Student"
+          className="w-full h-auto object-cover"
+        />
+      </motion.div>
+    </div>
   );
 };
 

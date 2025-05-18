@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import CustomButton from "../components/CustomButton.jsx";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
+import contactImage from "../assets/icon/boylaptop.json";
+import { Player } from "@lottiefiles/react-lottie-player";
+
+
+
 
 // Animation variants (safe for small screens)
 const fadeInLeft = {
@@ -97,7 +102,7 @@ const Contact = () => {
             >
               Get in Touch
             </motion.h2>
-            
+
 
             <form className="space-y-6" onSubmit={handleSubmit}>
               {["fullName", "email", "phoneNumber"].map((field, i) => (
@@ -108,13 +113,12 @@ const Contact = () => {
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <i
-                        className={`fas ${
-                          field === "fullName"
-                            ? "fa-user"
-                            : field === "email"
+                        className={`fas ${field === "fullName"
+                          ? "fa-user"
+                          : field === "email"
                             ? "fa-envelope"
                             : "fa-phone"
-                        } text-gray-400`}
+                          } text-gray-400`}
                       ></i>
                     </div>
                     <input
@@ -172,73 +176,87 @@ const Contact = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              className="bg-blue-50 rounded-4xl shadow-sm p-8 overflow-hidden"
+              className="bg-blue-50 rounded-4xl shadow-sm p-8 overflow-hidden flex"
             >
-              <motion.h3
-                variants={textFadeIn}
-                custom={1}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                className="text-xl font-semibold mb-6 ml-10"
-              >
-                Contact Information
-              </motion.h3>
+              {/* Lottie Animation on the left */}
+              <div className="w-32 h-32 mr-6 flex-shrink-0">
+                <Player
+                  autoplay
+                  loop
+                  src={contactImage}
+                  style={{ height: '120%', width: '120%' }}
+                />
+              </div>
 
-              <div className="space-y-4 ml-14">
-                <div className="flex items-start">
-                  <a
-                    href="https://maps.app.goo.gl/A2KF66VsUhZRpWr29"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-start hover:bg-gray-100 p-2 rounded-lg transition"
-                  >
-                    <i className="fas fa-map-marker-alt text-custom w-5 mt-1"></i>
+              {/* Info content */}
+              <div className="flex-1">
+                <motion.h3
+                  variants={textFadeIn}
+                  custom={1}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.2 }}
+                  className="text-xl font-semibold mb-6"
+                >
+                  Contact Information
+                </motion.h3>
+
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <a
+                      href="https://maps.app.goo.gl/A2KF66VsUhZRpWr29"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-start hover:bg-gray-100 p-2 rounded-lg transition"
+                    >
+                      <i className="fas fa-map-marker-alt text-custom w-5 mt-1"></i>
+                      <div className="ml-3">
+                        <p className="text-gray-900">Lahurampur Mahul</p>
+                        <p className="text-gray-600">Azamgarh</p>
+                        <p className="text-gray-600">U.P In India 223225</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div className="flex items-center">
+                    <i className="fas fa-phone text-custom w-5"></i>
+                    <a href="tel:+918948557071" className="ml-3 text-gray-900 hover:text-custom">
+                      +91 8948557071
+                    </a>
+                  </div>
+                  <div className="flex items-center">
+                    <i className="fas fa-envelope text-custom w-5"></i>
+                    <a href="mailto:yourbbksv@gmail.com" className="ml-3 text-gray-900 hover:text-custom">
+                      yourbbksv@gmail.com
+                    </a>
+                  </div>
+                  <div className="flex items-start">
+                    <i className="fas fa-clock text-custom w-5"></i>
                     <div className="ml-3">
-                      <p className="text-gray-900">Lahurampur Mahul</p>
-                      <p className="text-gray-600">Azamgarh</p>
-                      <p className="text-gray-600">U.P In India 223225</p>
+                      <p className="text-gray-900">Monday - Saturday</p>
+                      <p className="text-gray-600">10:00 AM - 4:00 PM</p>
                     </div>
-                  </a>
+                  </div>
                 </div>
-                <div className="flex items-center">
-                  <i className="fas fa-phone text-custom w-5"></i>
-                  <a href="tel:+918948557071" className="ml-3 text-gray-900 hover:text-custom">
-                    +91 8948557071
-                  </a>
-                </div>
-                <div className="flex items-center">
-                  <i className="fas fa-envelope text-custom w-5"></i>
-                  <a href="mailto:yourbbksv@gmail.com" className="ml-3 text-gray-900 hover:text-custom">
-                    yourbbksv@gmail.com
-                  </a>
-                </div>
-                <div className="flex items-start">
-                  <i className="fas fa-clock text-custom w-5"></i>
-                  <div className="ml-3">
-                    <p className="text-gray-900">Monday - Saturday</p>
-                    <p className="text-gray-600">10:00 AM - 4:00 PM</p>
+
+                <div className="mt-8">
+                  <div className="flex space-x-4">
+                    <a href="#" className="text-gray-400 hover:text-custom">
+                      <i className="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" className="text-gray-400 hover:text-custom">
+                      <i className="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" className="text-gray-400 hover:text-custom">
+                      <i className="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="#" className="text-gray-400 hover:text-custom">
+                      <i className="fab fa-instagram text-xl"></i>
+                    </a>
                   </div>
                 </div>
               </div>
-
-              <div className="mt-8 ml-10">
-                <div className="flex space-x-4 ml-6">
-                  <a href="#" className="text-gray-400 hover:text-custom">
-                    <i className="fab fa-facebook-f text-xl"></i>
-                  </a>
-                  <a href="#" className="text-gray-400 hover:text-custom">
-                    <i className="fab fa-twitter text-xl"></i>
-                  </a>
-                  <a href="#" className="text-gray-400 hover:text-custom">
-                    <i className="fab fa-linkedin-in text-xl"></i>
-                  </a>
-                  <a href="#" className="text-gray-400 hover:text-custom">
-                    <i className="fab fa-instagram text-xl"></i>
-                  </a>
-                </div>
-              </div>
             </motion.div>
+
 
             {/* Google Map */}
             <motion.div
