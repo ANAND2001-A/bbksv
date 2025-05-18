@@ -55,7 +55,7 @@ export default function Navbar({ children }) {
   return (
     <>
       {/* Desktop Navbar */}
-      {/* <nav className="bg-white px-4 py-3 shadow-sm hidden lg:block"> */}
+      <nav className="px-4 py-3 hidden lg:block">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
           <Link to="/">
@@ -119,7 +119,7 @@ export default function Navbar({ children }) {
             </a>
 
             {user ? (
-              <img src={img} className='h-6 w-6' onClick={handleLogout}></img>
+              <img src={img} className='h-6 w-6 cursor-pointer' onClick={handleLogout} alt="Logout" />
             ) : (
               <>
                 <Link to="/login">
@@ -135,13 +135,12 @@ export default function Navbar({ children }) {
             </Link>
           </div>
         </div>
-      {/* </nav> */}
+      </nav>
 
       {/* Mobile Top Nav */}
       <div className="bg-white shadow-sm px-4 py-2 flex items-center justify-between lg:hidden fixed top-0 left-0 right-0 z-50">
         <div className="flex items-center gap-2">
           <img className="w-10 h-10 object-cover rounded-full" src={logo} alt="logo" />
-          <span className="text-base font-semibold text-[#005B96]">BBKSV</span>
         </div>
 
         <div className="flex items-center gap-3">
@@ -156,13 +155,12 @@ export default function Navbar({ children }) {
           </a>
 
           {user ? (
-            <img src={img} className='h-6 w-6' onClick={handleLogout}></img>
-
+            <img src={img} className='h-6 w-6 cursor-pointer' onClick={handleLogout} alt="Logout" />
           ) : (
             <>
               <Link to="/login">
                 <img src={loginImg} alt="Login" className="w-6 h-6 object-contain cursor-pointer" />
-              </Link>              
+              </Link>
               <Link to="/signup"><CustomButton>Signup</CustomButton></Link>
             </>
           )}

@@ -144,13 +144,8 @@ const GallarySection = () => {
   }, [activeCategory, sortOption]);
 
   return (
-    <div className="bg-blue-50 min-h-screen py-12 px-4 container mx-auto">
+    <div className="bg-blue-30 min-h-screen py-12 px-4 container mx-auto">
       <h1 className="text-4xl font-bold text-blue-900 mb-2">Campus Gallery</h1>
-      <div className="w-full flex justify-start mb-6">
-        <svg className="w-32 h-6 text-red-500" viewBox="0 0 100 20" preserveAspectRatio="none">
-          <path d="M0,10 C30,20 70,0 100,10" fill="none" stroke="currentColor" strokeWidth="1.5" />
-        </svg>
-      </div>
 
       <p className="text-gray-600 mb-6 max-w-2xl">
         Explore our campus through photographs showcasing student life,
@@ -165,7 +160,7 @@ const GallarySection = () => {
               key={category}
               onClick={() => setActiveCategory(category)}
               className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition ${activeCategory === category
-                ? "bg-blue-900 text-white"
+                ? "bg-[#54BD95] text-white"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
             >
@@ -188,7 +183,7 @@ const GallarySection = () => {
 
           <button
             onClick={() => setViewMode("grid")}
-            className={`p-2 rounded ${viewMode === "grid" ? "bg-blue-900 text-white" : "bg-white"
+            className={`p-2 rounded ${viewMode === "grid" ? "bg-[#54BD95] text-white" : "bg-white"
               }`}
           >
             <Grid size={20} />
