@@ -6,15 +6,15 @@ import line from '../assets/logos/home_img/line.svg';
 
 const Home = () => {
   return (
-    <div className="relative w-full overflow-hidden">
-      {/* Gradient Background Blobs */}
+<div className="relative w-full overflow-hidden min-h-screen -mt-20 lg:mt-0">
+{/* Gradient Background Blobs */}
       <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] bg-[#52BDAA] opacity-40 rounded-full blur-3xl z-0" />
       <div className="absolute top-[30%] left-[30%] w-[350px] h-[350px] bg-[#FFFFFF] opacity-50 rounded-full blur-3xl z-0" />
       <div className="absolute bottom-[10%] right-[20%] w-[300px] h-[300px] bg-[#54BE96] opacity-40 rounded-full blur-3xl z-0" />
       <div className="absolute bottom-[-10%] left-[20%] w-[400px] h-[400px] bg-[#FFD6D6] opacity-30 rounded-full blur-3xl z-0" />
 
       {/* Content Section */}
-      <div className="relative z-10 max-w-[1360px] mx-auto px-4 sm:px-6 pt-28 pb-10 grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+      <div className="relative z-10 max-w-[1360px] mx-auto px-4 sm:px-6 pt-32 pb-10 grid grid-cols-1 md:grid-cols-2 items-center gap-10">
         {/* Left Section */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -44,10 +44,10 @@ const Home = () => {
           </p>
 
           <div className="flex flex-wrap justify-center md:justify-start items-center gap-4">
-            <button className="bg-[#54BD95] text-white px-6 py-3 rounded-full font-medium transition">
+            <button className="bg-[#54BD95] text-white px-6 py-3 rounded-full font-medium transition hover:bg-[#429675]">
               Enroll Now
             </button>
-            <button className="flex items-center gap-2 px-5 py-3 rounded-full text-[#191A15] transition">
+            <button className="flex items-center gap-2 px-5 py-3 rounded-full text-[#191A15] transition hover:bg-gray-200">
               <div className="p-2 rounded-full border border-[#191A15] inline-flex items-center justify-center">
                 <FaPlay size={14} />
               </div>
