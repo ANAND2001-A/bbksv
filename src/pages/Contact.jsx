@@ -90,7 +90,7 @@ const Contact = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="bg-blue-50 rounded-4xl shadow-sm p-8 overflow-hidden"
+            className="bg-[#F5FAFA] rounded-4xl shadow-sm p-8 overflow-hidden"
           >
             <motion.h2
               variants={textFadeIn}
@@ -264,7 +264,7 @@ const Contact = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              className="bg-blue-50 rounded-4xl shadow-sm p-8 overflow-hidden"
+              className="bg-[#F5FAFA] rounded-4xl shadow-sm p-8 overflow-hidden"
             >
               <motion.h3
                 variants={textFadeIn}

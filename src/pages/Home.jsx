@@ -13,10 +13,8 @@ const Home = () => {
       <div className="absolute bottom-[10%] right-[20%] w-[300px] h-[300px] bg-[#54BE96] opacity-40 rounded-full blur-3xl z-0" />
       <div className="absolute bottom-[-10%] left-[20%] w-[400px] h-[400px] bg-[#FFD6D6] opacity-30 rounded-full blur-3xl z-0" />
 
-      
-
       {/* Content Section */}
-      <div className="relative z-10 max-w-[1360px] mx-auto px-4 sm:px-6 pt-0 pb-10 grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+      <div className="relative z-10 max-w-[1360px] mx-auto px-4 sm:px-6 pt-28 pb-10 grid grid-cols-1 md:grid-cols-2 items-center gap-10">
         {/* Left Section */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -24,7 +22,7 @@ const Home = () => {
           transition={{ duration: 0.6 }}
           className="text-center md:text-left"
         >
-          <h1 className="text-3xl sm:text-4xl pt-10 lg:pt-0 md:text-5xl font-bold leading-tight text-[#191A15] mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-[#191A15] mb-6">
             Education for <br /> a Better Tomorrow
             <motion.div
               initial={{ opacity: 0, x: 40 }}
@@ -46,10 +44,10 @@ const Home = () => {
           </p>
 
           <div className="flex flex-wrap justify-center md:justify-start items-center gap-4">
-            <button className="bg-[#54BD95] text-white px-6 py-3 rounded-full font-medium transition ">
+            <button className="bg-[#54BD95] text-white px-6 py-3 rounded-full font-medium transition">
               Enroll Now
             </button>
-            <button className="flex items-center gap-2 px-5 py-3 rounded-full text-[#191A15] transition ">
+            <button className="flex items-center gap-2 px-5 py-3 rounded-full text-[#191A15] transition">
               <div className="p-2 rounded-full border border-[#191A15] inline-flex items-center justify-center">
                 <FaPlay size={14} />
               </div>

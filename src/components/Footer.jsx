@@ -217,7 +217,7 @@ export default function Footer() {
       
        {/* Lottie Animation with pause/play on click */}
        <div
-        className="absolute top-4 right-4 w-40 h-40 pointer-events-auto hidden sm:block z-0 cursor-pointer"
+        className="absolute top-4 right-4 w-40 h-40 pointer-events-auto z-0 cursor-pointer"
         onClick={handleTogglePlay}
         title={isPlaying ? "Click to pause animation" : "Click to play animation"}
       >

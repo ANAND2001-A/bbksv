@@ -81,7 +81,7 @@ const Frequently = () => {
           <button
             key={tab}
             className={`px-4 py-2 rounded-full border ${selectedTab === tab
-                ? "bg-black text-white"
+                ? "bg-[#54BD95] text-white"
                 : "bg-white text-black"
               }`}
             onClick={() => {
