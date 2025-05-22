@@ -12,6 +12,8 @@ import "aos/dist/aos.css";
 
 import img1 from "../assets/logos/home_img/kids.jpg";
 import CustomButton from "../components/CustomButton";
+import Courses from "./Courses";
+import SuccessStory from "./SuccessStories";
 
 const GallarySection = () => {
   const [activeCategory, setActiveCategory] = useState("All Photos");
@@ -144,14 +146,15 @@ const GallarySection = () => {
   }, [activeCategory, sortOption]);
 
   return (
-    <div className="bg-blue-30 min-h-screen py-12 px-4 container mx-auto">
+    <div className="bg-blue-30 min-h-screen py-12 px-4 container mx-auto overflow-hidden ">
+      <SuccessStory />
+
       <h1 className="text-4xl font-bold text-blue-900 mb-2">Campus Gallery</h1>
 
       <p className="text-gray-600 mb-6 max-w-2xl">
         Explore our campus through photographs showcasing student life,
         facilities, and more.
       </p>
-
       {/* Filters */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
         <div className="flex flex-wrap gap-2">

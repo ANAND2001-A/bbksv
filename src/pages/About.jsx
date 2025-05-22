@@ -204,7 +204,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pt-24">
       {/* Hero Section with Background Image */}
       <section
         className="relative h-[600px] bg-cover bg-center"

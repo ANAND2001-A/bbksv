@@ -61,41 +61,93 @@ export default function Navbar({ children }) {
             </div>
           </Link>
 
-          <div className="bg-blue-50 text-[#005B96] rounded-full px-6 py-2 flex items-center gap-6 shadow-sm relative">
+          <div className="backdrop-blur-md bg-white/30 text-[#005B96] rounded-full px-8 py-3 flex items-center gap-6 shadow-lg border border-white/40 transition-all duration-300">
             <Link to="/" className="font-medium">Home</Link>
             <div className="relative" ref={landingsRef}>
-              <div onClick={() => setShowLandings(!showLandings)} className="flex items-center gap-1 cursor-pointer">
+              <div
+                onClick={() => setShowLandings(!showLandings)}
+                className="flex items-center gap-1 cursor-pointer font-medium text-[#005B96] hover:text-blue-700 transition-colors duration-200"
+              >
                 <span>Courses</span>
-                <IoChevronDown className="text-sm" />
+                <IoChevronDown
+                  className={`text-sm transform transition-transform duration-300 ${showLandings ? "rotate-180" : ""}`}
+                />
               </div>
+
               {showLandings && (
-                <div className="absolute left-0 top-full mt-2 z-20">
-                  <div className="absolute top-0 left-4 w-3 h-3 bg-white rotate-45 shadow-md -translate-y-1/2"></div>
-                  <div className="bg-blue-50 rounded-md shadow-md w-40 py-2 text-[#005B96] flex flex-col">
-                    <Link to="/courses" className="block px-4 py-2 hover:bg-gray-100">Courses 1</Link>
+                <div className="absolute left-0 top-full mt-3 z-30 w-56 animate-dropdown-fade">
+                  {/* Dropdown Arrow */}
+                  <div className="absolute top-0 left-6 w-3 h-3 bg-white/70 rotate-45 shadow -translate-y-1/2 backdrop-blur-md border border-white/30"></div>
+
+                  {/* Dropdown Menu */}
+                  <div className="rounded-xl bg-white/60 backdrop-blur-md shadow-2xl border border-white/30 py-3 px-2 transition-all duration-300">
+                    <Link
+                      to="/courses"
+                      className="block px-4 py-2 rounded-lg hover:bg-blue-100/50 hover:text-blue-900 transition duration-200"
+                    >
+                      Courses 1
+                    </Link>
+                    <Link
+                      to="/courses-advanced"
+                      className="block px-4 py-2 rounded-lg hover:bg-blue-100/50 hover:text-blue-900 transition duration-200"
+                    >
+                      Advanced Courses
+                    </Link>
+                    <Link
+                      to="/workshops"
+                      className="block px-4 py-2 rounded-lg hover:bg-blue-100/50 hover:text-blue-900 transition duration-200"
+                    >
+                      Workshops
+                    </Link>
                   </div>
                 </div>
               )}
             </div>
+
             <Link to="/teacher">Teacher</Link>
             <Link to="/gallary">Gallary</Link>
             <Link to="/successstories">Dashboard</Link>
             <div className="relative" ref={pagesRef}>
-              <div onClick={() => setShowPages(!showPages)} className="flex items-center gap-1 cursor-pointer">
+              <div
+                onClick={() => setShowPages(!showPages)}
+                className="flex items-center gap-1 cursor-pointer font-medium text-[#005B96] hover:text-blue-700 transition-colors duration-200"
+              >
                 <span>Pages</span>
-                <IoChevronDown className="text-sm" />
+                <IoChevronDown
+                  className={`text-sm transform transition-transform duration-300 ${showPages ? "rotate-180" : ""}`}
+                />
               </div>
+
               {showPages && (
-                <div className="absolute left-0 top-full mt-2 z-20">
-                  <div className="absolute top-0 left-4 w-3 h-3 bg-white rotate-45 shadow-md -translate-y-1/2"></div>
-                  <div className="bg-blue-50 rounded-md shadow-md w-40 py-2 text-[#005B96] flex flex-col">
-                    <Link to="/about" className="block px-4 py-2 hover:bg-gray-100">About</Link>
-                    <Link to="/contact" className="block px-4 py-2 hover:bg-gray-100">Contact</Link>
-                    <Link to="/blog" className="block px-4 py-2 hover:bg-gray-100">Blog</Link>
+                <div className="absolute left-0 top-full mt-3 z-30 w-56 animate-dropdown-fade">
+                  {/* Dropdown arrow */}
+                  <div className="absolute top-0 left-6 w-3 h-3 bg-white/70 rotate-45 shadow -translate-y-1/2 backdrop-blur-md border border-white/30"></div>
+
+                  {/* Dropdown menu */}
+                  <div className="rounded-xl bg-white/60 backdrop-blur-md shadow-2xl border border-white/30 py-3 px-2 transition-all duration-300">
+                    <Link
+                      to="/about"
+                      className="block px-4 py-2 rounded-lg hover:bg-blue-100/50 hover:text-blue-900 transition duration-200"
+                    >
+                      About
+                    </Link>
+                    <Link
+                      to="/contact"
+                      className="block px-4 py-2 rounded-lg hover:bg-blue-100/50 hover:text-blue-900 transition duration-200"
+                    >
+                      Contact
+                    </Link>
+                    <Link
+                      to="/blog"
+                      className="block px-4 py-2 rounded-lg hover:bg-blue-100/50 hover:text-blue-900 transition duration-200"
+                    >
+                      Blog
+                    </Link>
                   </div>
                 </div>
               )}
             </div>
+
           </div>
 
           <div className="flex items-center gap-3">

@@ -10,7 +10,7 @@ const Teacher = () => {
   const teacherImages = [img1, img2, img3, img4];
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800 p-6">
+    <div className="min-h-screen bg-gray-50 text-gray-800 p-6 pt-24">
       <div className="max-w-6xl mx-auto space-y-10">
         {/* Header */}
         <div className="text-center">

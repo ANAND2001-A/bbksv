@@ -126,7 +126,7 @@ const Courses = () => {
     const [activeTab, setActiveTab] = useState("all");
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white pt-24">
             {/* Hero Section */}
             <section className="relative overflow-hidden">
                 <div className="absolute right-0 top-0 w-3/4 h-full bg-blue-800 z-0"></div>

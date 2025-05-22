@@ -1,16 +1,18 @@
+// layouts/MainLayout.jsx
+
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import FloatingActionButton from "../components/FloatingActionButton.jsx";
 
-const MainLayout = ({ children }) => {  // Corrected prop name here
+const MainLayout = () => {
   return (
     <>
       <Navbar />
-      <main>
+      {/* Apply padding only here to offset the fixed navbar */}
+      <main > {/* 96px = 24 * 4px (adjust if needed) */}
         <Outlet />
-        {children} {/* This renders the nested child route like Home */}
       </main>
       <FloatingActionButton />
       <Footer />

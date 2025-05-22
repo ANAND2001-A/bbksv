@@ -107,9 +107,9 @@ const SuccessStory = () => {
   };
 
   return (
-    <div className="bg-[#e9f6fc] py-12">
+    <div className=" py-12">
       <h2 className="text-center text-xl font-semibold text-gray-700 mb-6">
-        OUR SUCCESS STORIES
+        OUR CAMPAS
       </h2>
 
       <div className="w-[1024px] mx-auto px-2 flex flex-col lg:flex-row items-stretch gap-2 min-h-[500px]">

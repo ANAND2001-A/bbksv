@@ -21,7 +21,7 @@ function App() {
   return (
     <BrowserRouter>
       <AuthLayout>
-        <Routes>
+        <Routes >
           {/* Main site layout with Navbar + Footer */}
           <Route path="/" element={<MainLayout />}>
             <Route index element={<MainRoute />} />

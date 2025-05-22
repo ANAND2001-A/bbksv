@@ -23,7 +23,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-4">
+    <div className="max-w-md mx-auto mt-10 p-4 pt-24">
       <h2 className="text-2xl mb-4 font-bold text-center">Signup</h2>
       <CustomInput label="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
       <CustomInput label="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
